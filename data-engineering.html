@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Engineering Services - KLN Data Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css">
+    <script>
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+        
+        function updateDynamicFooter() {
+            const footerContent = {
+                capabilities: [
+                    { title: "Generative AI Solutions", link: "enterprise-ai-implementation.html" },
+                    { title: "MLOps & Model Governance", link: "mlops-implementation-guide.html" },
+                    { title: "Real-time Analytics", link: "real-time-streaming-solutions.html" },
+                    { title: "Cloud Data Architecture", link: "data-warehousing-solutions.html" },
+                    { title: "Edge Computing Analytics", link: "predictive-analytics-strategies.html" },
+                    { title: "Data Mesh Implementation", link: "data-pipeline-management.html" },
+                    { title: "AI Ethics & Compliance", link: "responsible-ai-governance.html" },
+                    { title: "Quantum Computing Prep", link: "advanced-bi-techniques.html" }
+                ],
+                industries: [
+                    { title: "FinTech & Digital Banking", link: "financial-services.html" },
+                    { title: "Precision Medicine", link: "life-sciences.html" },
+                    { title: "Smart Manufacturing", link: "manufacturing-logistics.html" },
+                    { title: "Autonomous Vehicles", link: "tech-telecom-media.html" },
+                    { title: "Sustainable Energy", link: "energy-sector.html" },
+                    { title: "Social Commerce", link: "retail-cpg.html" },
+                    { title: "Space Technology", link: "tech-telecom-media.html" },
+                    { title: "Climate Analytics", link: "energy-sector.html" }
+                ],
+                blog: [
+                    { title: "AI Ethics & Governance", link: "ai-ethics-and-compliance.html" },
+                    { title: "MLOps Best Practices", link: "mlops-implementation-guide.html" },
+                    { title: "Cloud Migration Strategies", link: "building-modern-data-pipelines.html" },
+                    { title: "Real-time Data Processing", link: "real-time-streaming-solutions.html" },
+                    { title: "Data Mesh Architecture", link: "data-lake-vs-data-warehouse.html" },
+                    { title: "Generative AI Implementation", link: "enterprise-ai-implementation.html" }
+                ],
+                caseStudies: [
+                    { title: "Healthcare AI Transformation", link: "clinical-trial-optimization.html" },
+                    { title: "Financial Risk Modeling", link: "financial-cases.html" },
+                    { title: "Manufacturing IoT Analytics", link: "manufacturing-cases.html" },
+                    { title: "Retail Personalization Engine", link: "retail-cases.html" },
+                    { title: "Telecom Network Optimization", link: "telecom-cases.html" },
+                    { title: "Energy Grid Analytics", link: "energy-sector.html" }
+                ]
+            };
+            
+            // Create footer with dynamic content
+            const footer = document.querySelector('footer');
+            if (footer && !footer.querySelector('.footer-nav')) {
+                footer.innerHTML = `
+                    <div class="footer-nav">
+                        <div class="footer-section">
+                            <h4>Capabilities</h4>
+                            <ul>${getRandomItems(footerContent.capabilities, 4).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Industries</h4>
+                            <ul>${getRandomItems(footerContent.industries, 5).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Blog</h4>
+                            <ul>${getRandomItems(footerContent.blog, 3).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Case Studies</h4>
+                            <ul>${getRandomItems(footerContent.caseStudies, 3).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                    </div>
+                    <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+                `;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', updateDynamicFooter);
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto;">
+            </div>
+            <ul>
+                <li><a href="index_new_fixed.html">Home</a></li>
+                <li><a href="index_new_fixed.html#capabilities">Capabilities</a></li>
+                <li><a href="index_new_fixed.html#resources">Resources</a></li>
+                <li><a href="index_new_fixed.html#working-with-us">Working with Us</a></li>
+                <li><a href="index_new_fixed.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Enterprise Data Engineering Solutions</h1>
+            <p class="section-intro">Building robust, scalable, and secure data infrastructure that transforms raw data into strategic business assets through modern engineering practices and cloud-native architectures.</p>
+            
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop" alt="Modern Data Architecture - Research Framework" class="content-image" style="margin-bottom: 2rem;">
+            <p style="text-align: center; font-style: italic; margin-bottom: 3rem;">Industry research shows that organizations implementing modern data engineering architectures achieve 60% faster time-to-insight and 45% reduction in infrastructure costs through cloud-native solutions.</p>
+        </section>
+
+        <section>
+            <h2>The Modern Data Engineering Landscape</h2>
+            <p>Data engineering has evolved from traditional ETL processes to encompass real-time streaming, cloud-native architectures, and DataOps methodologies. Modern enterprises require data infrastructure that can handle petabyte-scale datasets, support millisecond-latency requirements, and maintain 99.99% availability while ensuring data quality, security, and compliance.</p>
+            
+            <p>Our data engineering practice combines software engineering best practices with deep expertise in distributed systems, cloud platforms, and data processing frameworks. We design and implement data architectures that scale horizontally, support diverse data types, and enable self-service analytics while maintaining enterprise-grade security and governance.</p>
+
+            <h2>Core Data Engineering Capabilities</h2>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>Scalable Data Pipeline Architecture</h3>
+                    <p>Design and implementation of fault-tolerant, auto-scaling data pipelines using Apache Spark, Apache Kafka, and cloud-native services. We build ETL/ELT processes that handle batch and streaming data with automatic error handling, data lineage tracking, and performance optimization.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Cloud Data Warehousing</h3>
+                    <p>Modern data warehouse solutions on Snowflake, Amazon Redshift, Google BigQuery, and Azure Synapse. We implement dimensional modeling, columnar storage optimization, and automated scaling to support complex analytical workloads with sub-second query performance.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Real-time Data Processing</h3>
+                    <p>Stream processing architectures using Apache Kafka, Apache Flink, Amazon Kinesis, and Google Dataflow. We build low-latency data pipelines for real-time analytics, fraud detection, and operational monitoring with exactly-once processing guarantees.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Data Lake & Lakehouse Architecture</h3>
+                    <p>Comprehensive data lake solutions on AWS S3, Azure Data Lake, and Google Cloud Storage with Delta Lake, Apache Iceberg, and Apache Hudi for ACID transactions, schema evolution, and time travel capabilities.</p>
+                </div>
+            </div>
+
+            <h2>Advanced Data Engineering Technologies</h2>
+            <p>Our technology stack encompasses cutting-edge tools and platforms for modern data infrastructure:</p>
+            
+            <ul>
+                <li><strong>Distributed Processing:</strong> Apache Spark, Apache Flink, Apache Beam for large-scale data processing and analytics</li>
+                <li><strong>Workflow Orchestration:</strong> Apache Airflow, Prefect, Dagster for complex data pipeline scheduling and monitoring</li>
+                <li><strong>Data Transformation:</strong> dbt (data build tool), Apache Spark SQL, Dataform for SQL-based data modeling and transformation</li>
+                <li><strong>Containerization:</strong> Docker, Kubernetes, Apache Airflow on Kubernetes for scalable and portable deployments</li>
+                <li><strong>Infrastructure as Code:</strong> Terraform, AWS CloudFormation, Pulumi for reproducible infrastructure provisioning</li>
+                <li><strong>Data Quality:</strong> Great Expectations, Apache Griffin, Deequ for automated data validation and monitoring</li>
+                <li><strong>Streaming Platforms:</strong> Apache Kafka, Apache Pulsar, Amazon MSK for real-time data ingestion and processing</li>
+            </ul>
+
+            <h2>Data Architecture Patterns & Best Practices</h2>
+            <p>We implement proven architectural patterns that ensure scalability, maintainability, and performance:</p>
+
+            <h3>Lambda & Kappa Architectures</h3>
+            <p>Hybrid batch and stream processing architectures that provide both real-time insights and historical analysis capabilities. We design systems that handle late-arriving data, ensure data consistency, and provide unified views across batch and streaming layers.</p>
+
+            <h3>Medallion Architecture (Bronze, Silver, Gold)</h3>
+            <p>Multi-layered data architecture that progressively refines data quality and structure. Raw data ingestion (Bronze), cleaned and validated data (Silver), and business-ready aggregated data (Gold) with clear data lineage and governance controls.</p>
+
+            <h3>Event-Driven Architecture</h3>
+            <p>Microservices-based data processing using event sourcing, CQRS patterns, and message-driven communication. We build loosely coupled systems that scale independently and provide real-time data propagation across enterprise systems.</p>
+
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>1. Requirements Analysis & Architecture Design</h3>
+                    <p>Comprehensive assessment of data sources, volume projections, latency requirements, and compliance needs. We design scalable architectures with clear data flow diagrams, technology selection rationale, and capacity planning models.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>2. Infrastructure Provisioning & Configuration</h3>
+                    <p>Automated infrastructure deployment using Infrastructure as Code principles. We implement auto-scaling policies, security configurations, monitoring systems, and disaster recovery procedures with comprehensive documentation.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>3. Pipeline Development & Testing</h3>
+                    <p>Agile development of data pipelines with comprehensive unit testing, integration testing, and performance testing. We implement CI/CD pipelines for automated deployment and rollback capabilities.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>4. Monitoring & Optimization</h3>
+                    <p>Comprehensive monitoring with custom metrics, alerting systems, and performance optimization. We implement data quality monitoring, cost optimization strategies, and proactive maintenance procedures.</p>
+                </div>
+            </div>
+
+            <h2>Cloud Platform Expertise</h2>
+            <p>Deep expertise across major cloud platforms with certified architects and engineers:</p>
+
+            <h3>Amazon Web Services (AWS)</h3>
+            <p>Comprehensive AWS data services including S3, Redshift, EMR, Glue, Kinesis, Lambda, and SageMaker. We implement Well-Architected Framework principles for reliability, security, performance efficiency, and cost optimization.</p>
+
+            <h3>Microsoft Azure</h3>
+            <p>Azure data platform services including Data Factory, Synapse Analytics, Data Lake Storage, Stream Analytics, and Azure Databricks. We leverage Azure's integrated AI/ML capabilities and enterprise security features.</p>
+
+            <h3>Google Cloud Platform (GCP)</h3>
+            <p>GCP data and analytics services including BigQuery, Dataflow, Dataproc, Cloud Storage, and Vertex AI. We utilize Google's advanced analytics capabilities and global network infrastructure.</p>
+
+            <h2>DataOps & DevOps Integration</h2>
+            <p>Modern data engineering requires robust operational practices and automation:</p>
+
+            <ul>
+                <li><strong>Continuous Integration/Continuous Deployment:</strong> Automated testing, deployment, and rollback procedures for data pipelines</li>
+                <li><strong>Version Control:</strong> Git-based version control for data pipeline code, configurations, and infrastructure definitions</li>
+                <li><strong>Environment Management:</strong> Consistent development, staging, and production environments with automated promotion processes</li>
+                <li><strong>Monitoring & Alerting:</strong> Comprehensive observability with metrics, logs, and traces for proactive issue detection</li>
+                <li><strong>Data Lineage:</strong> End-to-end data lineage tracking for impact analysis and regulatory compliance</li>
+                <li><strong>Security & Compliance:</strong> Encryption at rest and in transit, access controls, audit logging, and compliance reporting</li>
+            </ul>
+
+            <h2>Performance Optimization & Scalability</h2>
+            <p>Advanced techniques for optimizing data processing performance and cost efficiency:</p>
+
+            <h3>Query Optimization</h3>
+            <p>SQL query optimization, indexing strategies, partitioning schemes, and materialized view design for sub-second query performance on large datasets.</p>
+
+            <h3>Resource Management</h3>
+            <p>Dynamic resource allocation, auto-scaling policies, and cost optimization strategies including spot instances, reserved capacity, and workload-based scaling.</p>
+
+            <h3>Data Compression & Storage</h3>
+            <p>Advanced compression algorithms, columnar storage formats (Parquet, ORC), and data lifecycle management for optimal storage costs and query performance.</p>
+
+            <h2>Data Quality & Governance</h2>
+            <p>Comprehensive data quality and governance frameworks ensure data reliability and compliance:</p>
+
+            <ul>
+                <li><strong>Data Validation:</strong> Automated data quality checks, schema validation, and anomaly detection</li>
+                <li><strong>Data Cataloging:</strong> Comprehensive data catalogs with metadata management and data discovery capabilities</li>
+                <li><strong>Access Control:</strong> Role-based access control, attribute-based access control, and fine-grained permissions</li>
+                <li><strong>Audit & Compliance:</strong> Comprehensive audit trails, regulatory compliance reporting, and data retention policies</li>
+                <li><strong>Data Privacy:</strong> PII detection, data masking, and privacy-preserving analytics techniques</li>
+            </ul>
+
+            <h2>Industry-Specific Solutions</h2>
+            <p>Tailored data engineering solutions for specific industry requirements:</p>
+
+            <h3>Financial Services</h3>
+            <p>High-frequency trading data processing, regulatory reporting automation, risk calculation engines, and real-time fraud detection systems with microsecond latency requirements.</p>
+
+            <h3>Healthcare & Life Sciences</h3>
+            <p>HIPAA-compliant data processing, clinical trial data management, genomic data pipelines, and real-time patient monitoring systems with strict security and privacy controls.</p>
+
+            <h3>Manufacturing & IoT</h3>
+            <p>Industrial IoT data ingestion, predictive maintenance pipelines, quality control automation, and supply chain optimization with edge computing integration.</p>
+
+            <h3>Retail & E-commerce</h3>
+            <p>Real-time inventory management, customer behavior tracking, recommendation engine data feeds, and omnichannel analytics with high-volume transaction processing.</p>
+
+            <h2>Migration & Modernization Services</h2>
+            <p>Comprehensive migration services for legacy system modernization:</p>
+
+            <ul>
+                <li><strong>Legacy System Assessment:</strong> Comprehensive analysis of existing data infrastructure and migration planning</li>
+                <li><strong>Cloud Migration:</strong> Lift-and-shift, re-platforming, and re-architecting strategies for cloud adoption</li>
+                <li><strong>Data Migration:</strong> Zero-downtime data migration with validation and rollback procedures</li>
+                <li><strong>Hybrid Architecture:</strong> Seamless integration between on-premises and cloud systems</li>
+                <li><strong>Training & Knowledge Transfer:</strong> Comprehensive training programs for internal teams</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

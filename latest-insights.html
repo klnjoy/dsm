@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Insights - KLN Data Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css">
+    <script>
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+        
+        function updateDynamicFooter() {
+            const footerContent = {
+                capabilities: [
+                    { title: "Generative AI Solutions", link: "enterprise-ai-implementation.html" },
+                    { title: "MLOps & Model Governance", link: "mlops-implementation-guide.html" },
+                    { title: "Real-time Analytics", link: "real-time-streaming-solutions.html" },
+                    { title: "Cloud Data Architecture", link: "data-warehousing-solutions.html" },
+                    { title: "Edge Computing Analytics", link: "predictive-analytics-strategies.html" },
+                    { title: "Data Mesh Implementation", link: "data-pipeline-management.html" },
+                    { title: "AI Ethics & Compliance", link: "responsible-ai-governance.html" },
+                    { title: "Quantum Computing Prep", link: "advanced-bi-techniques.html" }
+                ],
+                industries: [
+                    { title: "FinTech & Digital Banking", link: "financial-services.html" },
+                    { title: "Precision Medicine", link: "life-sciences.html" },
+                    { title: "Smart Manufacturing", link: "manufacturing-logistics.html" },
+                    { title: "Autonomous Vehicles", link: "tech-telecom-media.html" },
+                    { title: "Sustainable Energy", link: "energy-sector.html" },
+                    { title: "Social Commerce", link: "retail-cpg.html" },
+                    { title: "Space Technology", link: "tech-telecom-media.html" },
+                    { title: "Climate Analytics", link: "energy-sector.html" }
+                ],
+                blog: [
+                    { title: "AI Ethics & Governance", link: "ai-ethics-and-compliance.html" },
+                    { title: "MLOps Best Practices", link: "mlops-implementation-guide.html" },
+                    { title: "Cloud Migration Strategies", link: "building-modern-data-pipelines.html" },
+                    { title: "Real-time Data Processing", link: "real-time-streaming-solutions.html" },
+                    { title: "Data Mesh Architecture", link: "data-lake-vs-data-warehouse.html" },
+                    { title: "Generative AI Implementation", link: "enterprise-ai-implementation.html" }
+                ],
+                caseStudies: [
+                    { title: "Healthcare AI Transformation", link: "clinical-trial-optimization.html" },
+                    { title: "Financial Risk Modeling", link: "financial-cases.html" },
+                    { title: "Manufacturing IoT Analytics", link: "manufacturing-cases.html" },
+                    { title: "Retail Personalization Engine", link: "retail-cases.html" },
+                    { title: "Telecom Network Optimization", link: "telecom-cases.html" },
+                    { title: "Energy Grid Analytics", link: "energy-sector.html" }
+                ]
+            };
+            
+            // Create footer with dynamic content
+            const footer = document.querySelector('footer');
+            if (footer && !footer.querySelector('.footer-nav')) {
+                footer.innerHTML = `
+                    <div class="footer-nav">
+                        <div class="footer-section">
+                            <h4>Capabilities</h4>
+                            <ul>${getRandomItems(footerContent.capabilities, 4).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Industries</h4>
+                            <ul>${getRandomItems(footerContent.industries, 5).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Blog</h4>
+                            <ul>${getRandomItems(footerContent.blog, 3).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Case Studies</h4>
+                            <ul>${getRandomItems(footerContent.caseStudies, 3).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                    </div>
+                    <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+                `;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', updateDynamicFooter);
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto;">
+            </div>
+            <ul>
+                <li><a href="index_new_fixed.html">Home</a></li>
+                <li><a href="index_new_fixed.html#capabilities">Capabilities</a></li>
+                <li><a href="index_new_fixed.html#resources">Resources</a></li>
+                <li><a href="index_new_fixed.html#working-with-us">Working with Us</a></li>
+                <li><a href="index_new_fixed.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1920&h=600&fit=crop') center/cover; padding: 120px 0; color: white; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Latest Insights</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; color: #e0e0e0;">Stay ahead with our latest research, trends, and expert perspectives on data strategy and emerging technologies</p>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=200&fit=crop" alt="AI Trends" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">The Future of Generative AI in Enterprise</h3>
+                        <p style="color: #495057; line-height: 1.6;">Exploring how generative AI is transforming business operations and decision-making processes across industries with practical implementation strategies.</p>
+                    </article>
+                    <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=200&fit=crop" alt="Data Governance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Data Governance in the Cloud Era</h3>
+                        <p style="color: #495057; line-height: 1.6;">Best practices for maintaining data quality, security, and compliance in modern cloud-based architectures with automated governance frameworks.</p>
+                    </article>
+                    <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=200&fit=crop" alt="Real-time Analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Real-time Analytics: From Batch to Stream</h3>
+                        <p style="color: #495057; line-height: 1.6;">How organizations are shifting from traditional batch processing to real-time streaming analytics for immediate business insights and competitive advantage.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #00796B; color: white; padding: 3rem 2rem 2rem; text-align: center;">
+        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLN Data Strategy - Clarity from Data</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css?v=2">
+    <script defer src="script.js"></script>
+    <script>
+        // Dynamic image collections
+        const imageCollections = {
+            dataEngineering: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=300&h=150&fit=crop'
+            ],
+            dataScience: [
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=300&h=150&fit=crop'
+            ],
+            dataAnalysis: [
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=300&h=150&fit=crop'
+            ],
+            strategy: [
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=300&h=150&fit=crop'
+            ],
+            governance: [
+                'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=300&h=150&fit=crop'
+            ],
+            lifeSciences: [
+                'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300&h=150&fit=crop'
+            ],
+            tech: [
+                'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=300&h=150&fit=crop'
+            ],
+            retail: [
+                'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=300&h=150&fit=crop'
+            ],
+            financial: [
+                'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=300&h=150&fit=crop'
+            ],
+            manufacturing: [
+                'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=300&h=150&fit=crop'
+            ],
+            capabilities: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop'
+            ],
+            resources: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop'
+            ],
+            team: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop'
+            ],
+            legal: [
+                'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=300&fit=crop'
+            ]
+        };
+        
+        function getRandomImage(collection) {
+            return collection[Math.floor(Math.random() * collection.length)];
+        }
+        
+        function updateDynamicImages() {
+            // Update main section images
+            document.querySelector('[alt="Data Capabilities"]').src = getRandomImage(imageCollections.capabilities);
+            document.querySelector('[alt="Data Resources"]').src = getRandomImage(imageCollections.resources);
+            document.querySelector('[alt="Professional Team"]').src = getRandomImage(imageCollections.team);
+            document.querySelector('[alt="Legal Compliance"]').src = getRandomImage(imageCollections.legal);
+            
+            // Update capability cards
+            document.querySelector('[alt="Data Engineering"]').src = getRandomImage(imageCollections.dataEngineering);
+            document.querySelector('[alt="Data Science & AI"]').src = getRandomImage(imageCollections.dataScience);
+            document.querySelector('[alt="Data Analysis"]').src = getRandomImage(imageCollections.dataAnalysis);
+            document.querySelector('[alt="Data Strategy Consultancy"]').src = getRandomImage(imageCollections.strategy);
+            document.querySelector('[alt="Data Governance & Security"]').src = getRandomImage(imageCollections.governance);
+            
+            // Update case study images
+            document.querySelector('[alt="Life Sciences"]').src = getRandomImage(imageCollections.lifeSciences);
+            document.querySelector('[alt="Tech, Telecom, & Media"]').src = getRandomImage(imageCollections.tech);
+            document.querySelector('[alt="CPG & Retail"]').src = getRandomImage(imageCollections.retail);
+            document.querySelector('[alt="Financial Services"]').src = getRandomImage(imageCollections.financial);
+            document.querySelector('[alt="Manufacturing & Logistics"]').src = getRandomImage(imageCollections.manufacturing);
+            
+            // Update blog category images
+            const blogImages = document.querySelectorAll('.blog-image');
+            blogImages[0].src = getRandomImage(imageCollections.dataEngineering);
+            blogImages[1].src = getRandomImage(imageCollections.dataAnalysis);
+            blogImages[2].src = getRandomImage(imageCollections.dataScience);
+            blogImages[3].src = getRandomImage(imageCollections.dataScience);
+            blogImages[4].src = getRandomImage(imageCollections.lifeSciences);
+            blogImages[5].src = getRandomImage(imageCollections.tech);
+            
+            // Update video thumbnails
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            videoThumbnails[0].style.backgroundImage = `url('${getRandomImage(imageCollections.dataEngineering)}')`;
+            videoThumbnails[1].style.backgroundImage = `url('${getRandomImage(imageCollections.dataScience)}')`;
+            videoThumbnails[2].style.backgroundImage = `url('${getRandomImage(imageCollections.lifeSciences)}')`;
+        }
+        
+        // Update images when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDynamicImages();
+            updateDynamicContent();
+            updateDynamicFooter();
+        });
+        
+        function updateDynamicFooter() {
+            const footerContent = {
+                capabilities: [
+                    { title: "Autonomous Data Intelligence", link: "enterprise-ai-implementation.html" },
+                    { title: "Cognitive Process Automation", link: "mlops-implementation-guide.html" },
+                    { title: "Predictive Business Modeling", link: "real-time-streaming-solutions.html" },
+                    { title: "Adaptive Cloud Ecosystems", link: "data-warehousing-solutions.html" },
+                    { title: "Quantum Analytics Preparation", link: "predictive-analytics-strategies.html" },
+                    { title: "Intelligent Data Orchestration", link: "data-pipeline-management.html" },
+                    { title: "Ethical AI Governance", link: "responsible-ai-governance.html" },
+                    { title: "Next-Gen Computing Readiness", link: "advanced-bi-techniques.html" }
+                ],
+                industries: [
+                    { title: "Digital Health Innovation", link: "financial-services.html" },
+                    { title: "Precision Medicine Analytics", link: "life-sciences.html" },
+                    { title: "Intelligent Manufacturing", link: "manufacturing-logistics.html" },
+                    { title: "Autonomous Systems Development", link: "tech-telecom-media.html" },
+                    { title: "Clean Energy Optimization", link: "energy-sector.html" },
+                    { title: "Personalized Commerce Platforms", link: "retail-cpg.html" },
+                    { title: "Space Data Analytics", link: "tech-telecom-media.html" },
+                    { title: "Environmental Intelligence", link: "energy-sector.html" }
+                ],
+                partners: [
+                    { title: "AWS GenAI Partnership", link: "aws-partnership.html" },
+                    { title: "Snowflake AI Data Cloud", link: "snowflake-alliance.html" },
+                    { title: "Microsoft Fabric Alliance", link: "microsoft-certified.html" },
+                    { title: "NVIDIA AI Computing", link: "technology-stack.html" },
+                    { title: "Databricks Lakehouse", link: "technology-stack.html" },
+                    { title: "Google Vertex AI", link: "technology-stack.html" },
+                    { title: "OpenAI Enterprise", link: "technology-stack.html" },
+                    { title: "Palantir Foundry", link: "technology-stack.html" }
+                ],
+                legal: [
+                    { title: "AI Governance Framework", link: "compliance.html" },
+                    { title: "Data Sovereignty Policy", link: "privacy-policy.html" },
+                    { title: "GDPR Compliance Guide", link: "cookie-policy.html" },
+                    { title: "Algorithmic Transparency", link: "terms-of-service.html" },
+                    { title: "Cross-Border Data Transfer", link: "privacy-policy.html" },
+                    { title: "Biometric Data Protection", link: "compliance.html" },
+                    { title: "AI Liability Framework", link: "terms-of-service.html" },
+                    { title: "Quantum Cryptography Standards", link: "compliance.html" }
+                ],
+                blog: [
+                    { title: "Ethical AI Implementation", link: "ai-ethics-and-compliance.html" },
+                    { title: "Intelligent Operations Framework", link: "mlops-implementation-guide.html" },
+                    { title: "Digital Transformation Strategies", link: "building-modern-data-pipelines.html" },
+                    { title: "Continuous Intelligence Systems", link: "real-time-streaming-solutions.html" },
+                    { title: "Distributed Data Architecture", link: "data-lake-vs-data-warehouse.html" },
+                    { title: "Cognitive AI Integration", link: "enterprise-ai-implementation.html" },
+                    { title: "Zero-Trust Data Security", link: "responsible-ai-governance.html" },
+                    { title: "Edge Intelligence Computing", link: "predictive-analytics-strategies.html" }
+                ],
+                caseStudies: [
+                    { title: "Medical AI Breakthrough", link: "clinical-trial-optimization.html" },
+                    { title: "Quantum Risk Assessment", link: "financial-cases.html" },
+                    { title: "Smart Factory Analytics", link: "manufacturing-cases.html" },
+                    { title: "Personalization Engine Success", link: "retail-cases.html" },
+                    { title: "Network Intelligence Optimization", link: "telecom-cases.html" },
+                    { title: "Renewable Energy Analytics", link: "energy-sector.html" },
+                    { title: "Drug Discovery Acceleration", link: "drug-discovery-analytics.html" },
+                    { title: "Supply Chain Intelligence", link: "manufacturing-logistics.html" }
+                ],
+                aboutUs: [
+                    { title: "Research & Development Hub", link: "technology-stack.html" },
+                    { title: "Strategic Alliances", link: "community-contributions.html" },
+                    { title: "Industry Leadership", link: "technical-articles.html" },
+                    { title: "Excellence Recognition", link: "success-stories.html" },
+                    { title: "Market Expansion", link: "news.html" },
+                    { title: "Environmental Responsibility", link: "our-mission.html" },
+                    { title: "Inclusive Innovation", link: "company-culture.html" },
+                    { title: "Leadership Excellence", link: "our-team.html" }
+                ]
+            };
+            
+            // Update Capabilities section
+            const capabilitiesSection = document.querySelector('.footer-section:nth-child(1) ul');
+            if (capabilitiesSection) {
+                const randomCapItems = getRandomItems(footerContent.capabilities, 4);
+                capabilitiesSection.innerHTML = randomCapItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Industries section
+            const industriesSection = document.querySelector('.footer-section:nth-child(2) ul');
+            if (industriesSection) {
+                const randomIndItems = getRandomItems(footerContent.industries, 5);
+                industriesSection.innerHTML = randomIndItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Blog section
+            const blogSection = document.querySelector('.footer-section:nth-child(3) ul');
+            if (blogSection) {
+                const randomBlogItems = getRandomItems(footerContent.blog, 3);
+                blogSection.innerHTML = randomBlogItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Case Studies section
+            const caseStudiesSection = document.querySelector('.footer-section:nth-child(4) ul');
+            if (caseStudiesSection) {
+                const randomCaseItems = getRandomItems(footerContent.caseStudies, 3);
+                caseStudiesSection.innerHTML = randomCaseItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update About Us section
+            const aboutUsSection = document.querySelector('.footer-section:nth-child(5) ul');
+            if (aboutUsSection) {
+                const randomAboutItems = getRandomItems(footerContent.aboutUs, 4);
+                aboutUsSection.innerHTML = randomAboutItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Partners section
+            const partnersSection = document.querySelector('.footer-section:nth-child(6) ul');
+            if (partnersSection) {
+                const randomPartnerItems = getRandomItems(footerContent.partners, 4);
+                partnersSection.innerHTML = randomPartnerItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Legal section
+            const legalSection = document.querySelector('.footer-section:nth-child(7) ul');
+            if (legalSection) {
+                const randomLegalItems = getRandomItems(footerContent.legal, 4);
+                legalSection.innerHTML = randomLegalItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+        }
+        
+        function updateDynamicContent() {
+            const contentVariations = {
+                capabilities: [
+                    {
+                        title: "Intelligent Data Orchestration",
+                        description: "Building autonomous data ecosystems that self-optimize performance, predict infrastructure needs, and automatically scale resources based on business demand patterns.",
+                        link: "machine-learning-models.html"
+                    },
+                    {
+                        title: "Cognitive Analytics Platform",
+                        description: "Developing AI-powered analytical frameworks that understand context, learn from patterns, and deliver predictive insights for strategic business transformation.",
+                        link: "data-warehousing-solutions.html"
+                    },
+                    {
+                        title: "Adaptive Intelligence Systems",
+                        description: "Creating responsive data architectures that evolve with changing business requirements while maintaining security, compliance, and operational excellence.",
+                        link: "real-time-streaming-solutions.html"
+                    }
+                ],
+                industries: [
+                    {
+                        sector: "Precision Healthcare Analytics",
+                        description: "Accelerating medical breakthroughs through genomic pattern recognition, treatment outcome modeling, and personalized therapy optimization using advanced computational biology.",
+                        link: "clinical-trial-optimization.html"
+                    },
+                    {
+                        sector: "Quantum Financial Modeling",
+                        description: "Revolutionizing risk assessment and portfolio optimization through quantum-inspired algorithms, behavioral economics modeling, and real-time market sentiment analysis.",
+                        link: "financial-services.html"
+                    },
+                    {
+                        sector: "Sustainable Energy Intelligence",
+                        description: "Optimizing renewable energy distribution through predictive weather modeling, consumption forecasting, and intelligent grid management for carbon-neutral operations.",
+                        link: "energy-sector.html"
+                    }
+                ],
+                resources: [
+                    {
+                        type: "Strategic Innovation Blueprints",
+                        content: "Comprehensive frameworks for implementing next-generation data architectures with measurable business impact and competitive differentiation.",
+                        link: "technical-articles.html"
+                    },
+                    {
+                        type: "Performance Excellence Metrics",
+                        content: "Quantitative analysis of data transformation outcomes across industries with actionable insights for optimization and scaling strategies.",
+                        link: "industry-trends.html"
+                    },
+                    {
+                        type: "Transformation Accelerators",
+                        content: "Proven methodologies for rapid deployment of intelligent data solutions with risk mitigation and change management best practices.",
+                        link: "latest-insights.html"
+                    }
+                ]
+            };
+            
+            // Randomly select and update capability descriptions
+            const capabilityCards = document.querySelectorAll('.capability-card');
+            if (capabilityCards.length >= 3) {
+                const randomCapabilities = getRandomItems(contentVariations.capabilities, 3);
+                randomCapabilities.forEach((content, index) => {
+                    if (capabilityCards[index]) {
+                        const titleElement = capabilityCards[index].querySelector('h3');
+                        const descElement = capabilityCards[index].querySelector('p');
+                        if (titleElement && descElement) {
+                            titleElement.textContent = content.title;
+                            descElement.textContent = content.description;
+                        }
+                    }
+                });
+            }
+            
+            // Update industry case studies
+            const resourceItems = document.querySelectorAll('.resource-item');
+            if (resourceItems.length >= 3) {
+                const randomIndustries = getRandomItems(contentVariations.industries, 3);
+                randomIndustries.forEach((content, index) => {
+                    if (resourceItems[index]) {
+                        const titleElement = resourceItems[index].querySelector('h4');
+                        const descElement = resourceItems[index].querySelector('p');
+                        const linkElement = resourceItems[index].querySelector('.resource-link');
+                        if (titleElement && descElement && linkElement) {
+                            titleElement.textContent = content.sector;
+                            descElement.textContent = content.description;
+                            linkElement.href = content.link;
+                        }
+                    }
+                });
+            }
+            
+            // Update blog post links dynamically
+            const blogLinks = document.querySelectorAll('.blog-post-link');
+            const randomResources = getRandomItems(contentVariations.resources, Math.min(blogLinks.length, 6));
+            randomResources.forEach((content, index) => {
+                if (blogLinks[index]) {
+                    blogLinks[index].textContent = content.type;
+                    blogLinks[index].href = content.link;
+                    blogLinks[index].title = content.content;
+                }
+            });
+        }
+        
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto; display: block;">
+            </div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#working-with-us">Working with Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>The Data Consulting Company</h1>
+                <p class="hero-subtitle">Clarity from Data.</p>
+                <p>Transforming complex data landscapes into strategic business advantages through innovative analytics, intelligent automation, and evidence-driven decision frameworks that accelerate growth and competitive positioning.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button primary">Get Started</a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities">
+            <h2>Our Capabilities</h2>
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Data Capabilities" class="content-image" style="margin-bottom: 2rem;">
+            <p class="section-intro">Transforming enterprise data challenges into competitive advantages through advanced methodologies, cutting-edge technologies, and proven frameworks that drive measurable business outcomes.</p>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop" alt="Data Engineering" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3>Data Engineering</h3>
+                    <p>Enterprise-grade data infrastructure using cloud-native architectures, distributed processing frameworks, and DataOps methodologies. We implement fault-tolerant pipelines with Apache Spark, Kafka, and Kubernetes that handle petabyte-scale datasets with microsecond latency requirements.</p>
+                    <ul class="capability-list">
+                        <li>Real-time Stream Processing & Event Architecture</li>
+                        <li>Cloud Data Warehousing (Snowflake, Redshift, BigQuery)</li>
+                        <li>Data Lake & Lakehouse Implementation (Delta Lake, Iceberg)</li>
+                        <li>MLOps & DataOps Pipeline Automation</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop" alt="Data Science & AI" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3>Data Science & AI</h3>
+                    <p>Advanced machine learning and AI solutions using transformer architectures, ensemble methods, and deep neural networks. We implement production-grade ML systems with automated retraining, bias detection, and explainable AI for regulatory compliance and business transparency.</p>
+                    <ul class="capability-list">
+                        <li>Large Language Models & Generative AI Integration</li>
+                        <li>Computer Vision & NLP with Transformer Architecture</li>
+                        <li>Predictive Analytics & Time Series Forecasting</li>
+                        <li>Responsible AI & Algorithmic Bias Mitigation</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop" alt="Data Analysis" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3>Data Analysis</h3>
+                    <p>Sophisticated analytical frameworks combining statistical rigor with interactive visualization and self-service capabilities. We implement advanced techniques including causal inference, Bayesian statistics, and multivariate analysis to deliver actionable insights that drive strategic decision-making.</p>
+                    <ul class="capability-list">
+                        <li>Advanced Statistical Modeling & Hypothesis Testing</li>
+                        <li>Interactive BI Platforms & Self-Service Analytics</li>
+                        <li>Geospatial Analytics & Network Analysis</li>
+                        <li>A/B Testing & Experimental Design Frameworks</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=150&fit=crop" alt="Data Strategy Consultancy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3>Data Strategy Consultancy</h3>
+                    <p>Comprehensive transformation guidance combining strategic planning, organizational change management, and technology roadmapping. We develop data maturity assessments, governance frameworks, and ROI-driven implementation plans that align data initiatives with business objectives.</p>
+                    <ul class="capability-list">
+                        <li>Enterprise Data Strategy & Maturity Assessment</li>
+                        <li>Digital Transformation & Change Management</li>
+                        <li>Data Governance & Compliance Frameworks (GDPR, HIPAA)</li>
+                        <li>Cloud Migration & Architecture Modernization</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=150&fit=crop" alt="Data Governance & Security" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3>Data Governance & Security</h3>
+                    <p>Enterprise governance frameworks ensuring data quality, privacy, and regulatory compliance through automated monitoring, lineage tracking, and risk management. We implement zero-trust architectures with encryption, access controls, and comprehensive audit capabilities.</p>
+                    <ul class="capability-list">
+                        <li>Privacy-Preserving Analytics & Differential Privacy</li>
+                        <li>Master Data Management & Data Quality Automation</li>
+                        <li>Regulatory Compliance (Basel III, SOX, FDA 21 CFR Part 11)</li>
+                        <li>Data Lineage & Impact Analysis Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Resources</h2>
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Data Resources" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <p class="section-intro" style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 3rem; color: #495057; line-height: 1.7;">Access our comprehensive library of case studies, videos, and insights across industries and technologies.</p>
+            
+            <div class="resources-container">
+                <div class="resource-section">
+                    <h3>Case Studies</h3>
+                    <div class="resource-grid">
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop" alt="Life Sciences" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>Life Sciences</h4>
+                            <p>Genomic data pipeline processing 50TB+ datasets with Apache Spark, reducing clinical trial patient stratification time by 73% using ML-based biomarker discovery and FDA 21 CFR Part 11 compliant data lineage tracking</p>
+                            <a href="life-sciences-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=150&fit=crop" alt="Tech, Telecom, & Media" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>Tech, Telecom, & Media</h4>
+                            <p>Real-time network anomaly detection using LSTM neural networks and Kafka streaming, achieving 99.7% accuracy in predicting service degradation 15 minutes before occurrence, reducing customer churn by 34%</p>
+                            <a href="telecom-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=150&fit=crop" alt="CPG & Retail" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>CPG & Retail</h4>
+                            <p>Multi-armed bandit recommendation system with transformer-based embeddings, increasing conversion rates by 47% while implementing differential privacy for GDPR compliance across 12M+ customer profiles</p>
+                            <a href="retail-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop" alt="Financial Services" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>Financial Services</h4>
+                            <p>Graph neural network fraud detection system processing 2M+ transactions/second with <50ms latency, achieving 0.02% false positive rate while maintaining Basel III compliance and explainable AI requirements</p>
+                            <a href="financial-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=150&fit=crop" alt="Manufacturing & Logistics" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>Manufacturing & Logistics</h4>
+                            <p>IoT-enabled predictive maintenance using ensemble methods and edge computing, reducing unplanned downtime by 68% and maintenance costs by $2.3M annually through vibration analysis and thermal imaging ML models</p>
+                            <a href="manufacturing-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-section">
+                    <h3>Videos</h3>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
+                                    <div class="play-button">▶️</div>
+                                </div>
+                                <h4>Data Engineering Best Practices</h4>
+                                <p>Learn how to build scalable data pipelines</p>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
+                                    <div class="play-button">▶️</div>
+                                </div>
+                                <h4>Generative AI in Enterprise</h4>
+                                <p>Implementing AI solutions for business transformation</p>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
+                                    <div class="play-button">▶️</div>
+                                </div>
+                                <h4>Bioinformatics Solutions</h4>
+                                <p>Advanced analytics for life sciences research</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-section">
+                    <h3>Blog Posts</h3>
+                    <div class="blog-categories">
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop" alt="Data Engineering" class="blog-image">
+                            <h4>Data Engineering</h4>
+                            <div class="blog-posts">
+                                <a href="building-modern-data-pipelines.html" class="blog-post-link">Building Modern Data Pipelines</a>
+                                <a href="data-lake-vs-data-warehouse.html" class="blog-post-link">Data Lake vs Data Warehouse</a>
+                                <a href="real-time-streaming-solutions.html" class="blog-post-link">Real-time Streaming Solutions</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop" alt="Data Analysis" class="blog-image">
+                            <h4>Data Analysis</h4>
+                            <div class="blog-posts">
+                                <a href="advanced-bi-techniques.html" class="blog-post-link">Advanced BI Techniques</a>
+                                <a href="statistical-analysis-methods.html" class="blog-post-link">Statistical Analysis Methods</a>
+                                <a href="data-visualization-best-practices.html" class="blog-post-link">Data Visualization Best Practices</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop" alt="Data Science" class="blog-image">
+                            <h4>Data Science</h4>
+                            <div class="blog-posts">
+                                <a href="machine-learning-model-selection.html" class="blog-post-link">Machine Learning Model Selection</a>
+                                <a href="mlops-implementation-guide.html" class="blog-post-link">MLOps Implementation Guide</a>
+                                <a href="predictive-analytics-strategies.html" class="blog-post-link">Predictive Analytics Strategies</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=300&h=150&fit=crop" alt="Generative AI" class="blog-image">
+                            <h4>Generative AI</h4>
+                            <div class="blog-posts">
+                                <a href="enterprise-ai-implementation.html" class="blog-post-link">Enterprise AI Implementation</a>
+                                <a href="responsible-ai-governance.html" class="blog-post-link">Responsible AI Governance</a>
+                                <a href="ai-ethics-and-compliance.html" class="blog-post-link">AI Ethics and Compliance</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop" alt="Bioinformatics" class="blog-image">
+                            <h4>Bioinformatics</h4>
+                            <div class="blog-posts">
+                                <a href="genomic-data-analysis.html" class="blog-post-link">Genomic Data Analysis</a>
+                                <a href="clinical-trial-optimization.html" class="blog-post-link">Clinical Trial Optimization</a>
+                                <a href="drug-discovery-analytics.html" class="blog-post-link">Drug Discovery Analytics</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=300&h=150&fit=crop" alt="Open Source" class="blog-image">
+                            <h4>Open Source</h4>
+                            <div class="blog-posts">
+                                <a href="open-source-data-tools.html" class="blog-post-link">Open Source Data Tools</a>
+                                <a href="community-contributions.html" class="blog-post-link">Community Contributions</a>
+                                <a href="building-with-open-standards.html" class="blog-post-link">Building with Open Standards</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="working-with-us" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Working with Us</h2>
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Professional Team" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="about-container">
+                <div class="working-grid">
+                    <div class="working-section">
+                        <h3>About Us</h3>
+                        <div class="subsection">
+                            <h4>Vision & Mission</h4>
+                            <p><strong>Vision:</strong> To be the trusted partner that transforms data into clarity, empowering organizations to innovate, grow, and lead with confidence.</p>
+                            <p><strong>Mission:</strong> To simplify complexity and unlock the true potential of data through clear, actionable strategies and sustainable solutions.</p>
+                        </div>
+                        <div class="subsection">
+                            <h4>Core Values</h4>
+                            <ul>
+                                <li><strong>Clarity</strong> – Turning complexity into direction</li>
+                                <li><strong>Trust</strong> – Delivering secure, reliable insights</li>
+                                <li><strong>Innovation</strong> – Leveraging modern technology</li>
+                                <li><strong>Partnership</strong> – Walking alongside clients</li>
+                                <li><strong>Growth</strong> – Driving measurable results</li>
+                            </ul>
+                        </div>
+                        <div class="subsection">
+                            <h4>Our Approach</h4>
+                            <p>We offer complete data and AI solutions to enhance organizations at every stage of their data journey, from strategy development to implementation and optimization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>News & Announcements</h3>
+                        <div class="news-item">
+                            <h4>Q4 2024 Partnership Expansion</h4>
+                            <p>New strategic partnerships with leading cloud providers enhance our service delivery capabilities.</p>
+                        </div>
+                        <div class="news-item">
+                            <h4>Industry Recognition</h4>
+                            <p>Named as a top data consulting firm by industry analysts for innovation in AI and machine learning solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Careers</h3>
+                        <p>Join our team of data experts and help shape the future of data-driven organizations. We offer competitive compensation, flexible work arrangements, and opportunities for professional growth.</p>
+                        <div class="career-links">
+                            <a href="open-positions.html" class="career-link">View Open Positions</a>
+                            <a href="company-culture.html" class="career-link">Company Culture</a>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Partners</h3>
+                        <div class="partners-compact">
+                            <a href="aws-partnership.html" class="partner-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="partner-logo">
+                                <span>AWS Advanced Partner</span>
+                            </a>
+                            <a href="snowflake-alliance.html" class="partner-item">
+                                <img src="https://logos-world.net/wp-content/uploads/2022/11/Snowflake-Symbol.png" alt="Snowflake" class="partner-logo">
+                                <span>Snowflake Elite Partner</span>
+                            </a>
+                            <a href="microsoft-certified.html" class="partner-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="partner-logo">
+                                <span>Microsoft Gold Certified</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Industries</h3>
+                        <div class="industries-compact">
+                            <a href="life-sciences-cases.html" class="industry-link">🧬 Life Sciences</a>
+                            <a href="financial-cases.html" class="industry-link">🏦 Financial Services</a>
+                            <a href="telecom-cases.html" class="industry-link">📱 Tech & Telecom</a>
+                            <a href="manufacturing-cases.html" class="industry-link">🏢 Manufacturing</a>
+                            <a href="retail-cases.html" class="industry-link">🛍️ Retail & CPG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="legal" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Legal</h2>
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=300&fit=crop" alt="Legal Compliance" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h3>Privacy Policy</h3>
+                    <p>We are committed to protecting your privacy and ensuring the security of your personal information.</p>
+                </div>
+                <div class="legal-section">
+                    <h3>Terms of Service</h3>
+                    <p>By using our services, you agree to comply with our terms and conditions.</p>
+                </div>
+                <div class="legal-section">
+                    <h3>Cookie Policy</h3>
+                    <p>We use cookies to enhance your browsing experience and analyze website traffic.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>Ready to make smarter decisions with your data? Talk to our data experts today or fill out this form to get started
+            <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <span>info@klndatastrategy.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="contact-item">
+                
+                
+            </div>
+            
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <div class="footer-section">
+                <h4>Capabilities</h4>
+                <ul>
+                    <li><a href="data-engineering.html">Data Engineering</a></li>
+                    <li><a href="data-analysis.html">Data Analysis</a></li>
+                    <li><a href="data-science.html">Data Science</a></li>
+                    <li><a href="data-consultancy.html">Data Consultancy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="life-sciences.html">Life Sciences</a></li>
+                    <li><a href="financial-services.html">Financial Services</a></li>
+                    <li><a href="tech-telecom-media.html">Tech, Telecom, Media</a></li>
+                    <li><a href="manufacturing-logistics.html">Mfg & Logistics</a></li>
+                    <li><a href="retail-cpg.html">Retail & CPG</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#blog">Blog</a></h4>
+                <ul>
+                    <li><a href="latest-insights.html">Latest Insights</a></li>
+                    <li><a href="technical-articles.html">Technical Articles</a></li>
+                    <li><a href="industry-trends.html">Industry Trends</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="case-studies.html">Case Studies</a></h4>
+                <ul>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="client-results.html">Client Results</a></li>
+                    <li><a href="project-highlights.html">Project Highlights</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#about-us">About Us</a></h4>
+                <ul>
+                    <li><a href="our-mission.html">Our Mission</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="open-positions.html">Open Positions</a></li>
+                    <li><a href="company-culture.html">Company Culture</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#partners">Partners</a></h4>
+                <ul>
+                    <li><a href="aws-partnership.html">AWS Partnership</a></li>
+                    <li><a href="snowflake-alliance.html">Snowflake Alliance</a></li>
+                    <li><a href="microsoft-certified.html">Microsoft Certified</a></li>
+                    <li><a href="technology-stack.html">Technology Stack</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#legal">Legal</a></h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="compliance.html">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

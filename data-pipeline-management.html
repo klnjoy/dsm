@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pipeline Management - KLN Data Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css">
+    <script>
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+        
+        function updateDynamicFooter() {
+            // Detect page context from URL or title
+            const pageUrl = window.location.pathname.toLowerCase();
+            const pageTitle = document.title.toLowerCase();
+            
+            let pageContext = 'general';
+            if (pageUrl.includes('data-engineering') || pageTitle.includes('data engineering')) pageContext = 'engineering';
+            else if (pageUrl.includes('data-science') || pageTitle.includes('data science') || pageTitle.includes('ai')) pageContext = 'ai';
+            else if (pageUrl.includes('analytics') || pageTitle.includes('analytics')) pageContext = 'analytics';
+            else if (pageUrl.includes('pipeline') || pageTitle.includes('pipeline')) pageContext = 'pipeline';
+            else if (pageUrl.includes('cloud') || pageTitle.includes('cloud')) pageContext = 'cloud';
+            else if (pageUrl.includes('financial') || pageTitle.includes('financial')) pageContext = 'financial';
+            else if (pageUrl.includes('healthcare') || pageTitle.includes('healthcare') || pageTitle.includes('life')) pageContext = 'healthcare';
+            else if (pageUrl.includes('manufacturing') || pageTitle.includes('manufacturing')) pageContext = 'manufacturing';
+            else if (pageUrl.includes('retail') || pageTitle.includes('retail')) pageContext = 'retail';
+            
+            const contextualContent = {
+                engineering: {
+                    capabilities: [{ title: "Advanced Data Pipeline Architecture", link: "data-pipeline-management.html" }, { title: "Real-time Stream Processing", link: "real-time-streaming-solutions.html" }, { title: "Cloud Infrastructure Optimization", link: "data-warehousing-solutions.html" }, { title: "DataOps Automation", link: "mlops-implementation-guide.html" }],
+                    industries: [{ title: "Financial Data Processing", link: "financial-services.html" }, { title: "Healthcare Data Systems", link: "life-sciences.html" }, { title: "Manufacturing Analytics", link: "manufacturing-logistics.html" }],
+                    partners: [{ title: "Apache Foundation", link: "technology-stack.html" }, { title: "Databricks Engineering", link: "technology-stack.html" }, { title: "AWS Data Services", link: "aws-partnership.html" }]
+                },
+                ai: {
+                    capabilities: [{ title: "Machine Learning Operations", link: "mlops-implementation-guide.html" }, { title: "Cognitive AI Systems", link: "enterprise-ai-implementation.html" }, { title: "Neural Network Architecture", link: "machine-learning-models.html" }, { title: "AI Ethics Framework", link: "responsible-ai-governance.html" }],
+                    industries: [{ title: "AI-Powered Healthcare", link: "life-sciences.html" }, { title: "Intelligent Finance", link: "financial-services.html" }, { title: "Smart Manufacturing", link: "manufacturing-logistics.html" }],
+                    partners: [{ title: "NVIDIA AI Computing", link: "technology-stack.html" }, { title: "OpenAI Enterprise", link: "technology-stack.html" }, { title: "Google AI Platform", link: "technology-stack.html" }]
+                },
+                financial: {
+                    capabilities: [{ title: "Risk Analytics Modeling", link: "predictive-analytics-strategies.html" }, { title: "Regulatory Compliance", link: "responsible-ai-governance.html" }, { title: "Fraud Detection Systems", link: "real-time-streaming-solutions.html" }, { title: "Trading Analytics", link: "advanced-bi-techniques.html" }],
+                    industries: [{ title: "Investment Banking", link: "financial-services.html" }, { title: "Insurance Analytics", link: "financial-cases.html" }, { title: "Fintech Innovation", link: "financial-cases.html" }],
+                    partners: [{ title: "Financial Data Consortium", link: "technology-stack.html" }, { title: "Risk Management Alliance", link: "technology-stack.html" }, { title: "Regulatory Tech Partners", link: "compliance.html" }]
+                },
+                healthcare: {
+                    capabilities: [{ title: "Clinical Data Analytics", link: "clinical-trial-optimization.html" }, { title: "Genomic Data Processing", link: "genomic-data-analysis.html" }, { title: "Medical AI Systems", link: "enterprise-ai-implementation.html" }, { title: "Healthcare Compliance", link: "compliance.html" }],
+                    industries: [{ title: "Pharmaceutical Research", link: "drug-discovery-analytics.html" }, { title: "Clinical Trials", link: "clinical-trial-optimization.html" }, { title: "Medical Devices", link: "life-sciences.html" }],
+                    partners: [{ title: "Medical Research Alliance", link: "technology-stack.html" }, { title: "Healthcare Data Consortium", link: "technology-stack.html" }, { title: "Clinical Analytics Partners", link: "technology-stack.html" }]
+                },
+                general: {
+                    capabilities: [{ title: "Autonomous Data Intelligence", link: "enterprise-ai-implementation.html" }, { title: "Cognitive Process Automation", link: "mlops-implementation-guide.html" }, { title: "Predictive Business Modeling", link: "real-time-streaming-solutions.html" }, { title: "Adaptive Cloud Ecosystems", link: "data-warehousing-solutions.html" }],
+                    industries: [{ title: "Digital Health Innovation", link: "life-sciences.html" }, { title: "Intelligent Manufacturing", link: "manufacturing-logistics.html" }, { title: "Clean Energy Optimization", link: "energy-sector.html" }],
+                    partners: [{ title: "AWS Advanced Partner", link: "aws-partnership.html" }, { title: "Snowflake Elite Partner", link: "snowflake-alliance.html" }, { title: "Microsoft Gold Certified", link: "microsoft-certified.html" }]
+                }
+            };
+            
+            const currentContent = contextualContent[pageContext] || contextualContent.general;
+            
+            const footer = document.querySelector('footer');
+            if (footer && !footer.querySelector('.footer-nav')) {
+                footer.innerHTML = `
+                    <div class="footer-nav">
+                        <div class="footer-section">
+                            <h4>Capabilities</h4>
+                            <ul>${currentContent.capabilities.map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Industries</h4>
+                            <ul>${currentContent.industries.map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Partners</h4>
+                            <ul>${currentContent.partners.map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: white; margin-top: 2rem;">&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+                `;
+                footer.style.background = '#00796B';
+                footer.style.color = 'white';
+                footer.style.padding = '3rem 2rem 2rem';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', updateDynamicFooter);
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto;">
+            </div>
+            <ul>
+                <li><a href="index_new_fixed.html">Home</a></li>
+                <li><a href="index_new_fixed.html#capabilities">Capabilities</a></li>
+                <li><a href="index_new_fixed.html#resources">Resources</a></li>
+                <li><a href="index_new_fixed.html#working-with-us">Working with Us</a></li>
+                <li><a href="index_new_fixed.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1920&h=600&fit=crop') center/cover; padding: 120px 0; color: white; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Data Pipeline Management</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; color: #e0e0e0;">Enterprise-grade data pipeline orchestration, monitoring, and optimization solutions for scalable data infrastructure</p>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop" alt="Data Pipeline Architecture" style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 3rem;">
+                
+                <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 2rem; color: #2c3e50;">Pipeline Orchestration Solutions</h2>
+                <p style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 3rem; color: #495057; line-height: 1.7;">Our data pipeline management solutions ensure reliable, scalable, and monitored data flows across your entire data ecosystem using industry-leading orchestration tools and modern DataOps practices.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">🔄 Apache Airflow Implementation</h3>
+                        <p style="color: #495057; line-height: 1.6;">Custom DAG development, cluster setup, and enterprise-grade Airflow deployments with Kubernetes orchestration</p>
+                    </div>
+                    <div style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">📊 Pipeline Monitoring</h3>
+                        <p style="color: #495057; line-height: 1.6;">Real-time monitoring, alerting, and SLA management for data pipeline health with comprehensive observability</p>
+                    </div>
+                    <div style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">⚡ Auto-scaling Pipelines</h3>
+                        <p style="color: #495057; line-height: 1.6;">Dynamic resource allocation and auto-scaling based on data volume and processing needs with cost optimization</p>
+                    </div>
+                    <div style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">🔒 Data Lineage Tracking</h3>
+                        <p style="color: #495057; line-height: 1.6;">Complete data lineage visibility and impact analysis across pipeline dependencies with governance controls</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

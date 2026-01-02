@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail & CPG Case Studies - KLN Data Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                 <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto;">
+            </div>
+            <ul>
+                <li><a href="index_new_fixed.html">Home</a></li>
+                <li><a href="index_new_fixed.html#capabilities">Capabilities</a></li>
+                <li><a href="index_new_fixed.html#resources">Resources</a></li>
+                <li><a href="index_new_fixed.html#working-with-us">Working with Us</a></li>
+                <li><a href="index_new_fixed.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Retail & CPG Case Studies</h1>
+            <p class="section-intro">Advanced recommendation systems, demand forecasting, and omnichannel analytics driving personalized customer experiences and operational excellence in retail and consumer goods.</p>
+            
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=300&fit=crop" alt="Gartner Research - Retail Analytics" class="content-image" style="margin-bottom: 2rem;">
+            <p style="text-align: center; font-style: italic; margin-bottom: 3rem;">Gartner research indicates that retailers using AI-powered personalization achieve 15% increase in revenue and 20% improvement in customer satisfaction through advanced recommendation systems.</p>
+
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h2>Multi-Armed Bandit Recommendation System</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">47%</span>
+                            <span class="metric-label">Conversion Rate Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12M+</span>
+                            <span class="metric-label">Customer Profiles</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">GDPR</span>
+                            <span class="metric-label">Compliant with Differential Privacy</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> E-commerce platform with 12M+ customers needed personalized recommendations balancing exploration-exploitation while maintaining GDPR compliance and handling cold-start problems for new users and products.</p>
+                    <p><strong>Technical Solution:</strong> Implemented contextual multi-armed bandit system with transformer-based embeddings, using differential privacy techniques for user data protection. Deployed on Kubernetes with auto-scaling and A/B testing framework.</p>
+                    <p><strong>Methodology:</strong> Applied Thompson sampling for exploration strategy, combined with deep learning embeddings for item and user representations. Used federated learning for privacy-preserving model updates and LIME for recommendation explainability.</p>
+                    <p><strong>Results:</strong> Increased conversion rates by 47%, maintained GDPR compliance with ε-differential privacy (ε=1.0), and achieved 23% improvement in customer lifetime value through personalized product discovery and cross-selling optimization.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h2>Demand Forecasting with External Data Integration</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">31%</span>
+                            <span class="metric-label">Inventory Cost Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">94%</span>
+                            <span class="metric-label">Forecast Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">15,000+</span>
+                            <span class="metric-label">SKUs Optimized</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> Global CPG company required accurate demand forecasting for 15,000+ SKUs across 47 countries, incorporating weather data, economic indicators, social media sentiment, and promotional activities.</p>
+                    <p><strong>Technical Solution:</strong> Built ensemble forecasting system combining Prophet, LSTM networks, and XGBoost with external data integration from weather APIs, social media feeds, and economic databases using Apache Airflow orchestration.</p>
+                    <p><strong>Methodology:</strong> Applied hierarchical time series forecasting with reconciliation techniques, feature engineering for external variables, and Bayesian optimization for hyperparameter tuning. Used attention mechanisms for multi-variate time series modeling.</p>
+                    <p><strong>Results:</strong> Achieved 94% forecast accuracy with 6-week horizon, reduced inventory costs by 31% through optimized stock levels, and prevented $18.7M in lost sales through improved product availability and supply chain optimization.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h2>Real-Time Price Optimization Engine</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">23%</span>
+                            <span class="metric-label">Margin Improvement</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">50ms</span>
+                            <span class="metric-label">Price Update Latency</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$67M</span>
+                            <span class="metric-label">Additional Annual Revenue</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> Online retailer needed dynamic pricing strategy for 2.3M products considering competitor prices, inventory levels, demand elasticity, and customer segments with real-time price updates.</p>
+                    <p><strong>Technical Solution:</strong> Developed reinforcement learning-based pricing engine using Deep Q-Networks with competitor price monitoring, demand elasticity modeling, and inventory optimization constraints integrated with Redis for sub-50ms response times.</p>
+                    <p><strong>Methodology:</strong> Applied multi-objective optimization with Pareto frontier analysis, price elasticity estimation using instrumental variables, and causal inference for promotional impact assessment. Used Monte Carlo simulation for risk analysis.</p>
+                    <p><strong>Results:</strong> Improved gross margins by 23% while maintaining competitive positioning, achieved 50ms price update latency, and generated $67M additional annual revenue through optimized pricing strategies and dynamic market response.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h2>Omnichannel Customer Journey Analytics</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">89%</span>
+                            <span class="metric-label">Attribution Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">340%</span>
+                            <span class="metric-label">Marketing ROI Improvement</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">8.7M</span>
+                            <span class="metric-label">Customer Touchpoints Tracked</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> Retail chain with online and 450+ physical stores needed unified customer journey tracking across touchpoints, attribution modeling for marketing campaigns, and real-time personalization capabilities.</p>
+                    <p><strong>Technical Solution:</strong> Built customer data platform using Apache Kafka for real-time event streaming, graph databases for relationship modeling, and machine learning pipeline for attribution analysis using Markov chain models and Shapley value calculations.</p>
+                    <p><strong>Methodology:</strong> Applied hidden Markov models for customer state transitions, survival analysis for churn prediction, and multi-touch attribution using cooperative game theory. Implemented privacy-preserving identity resolution with hashing techniques.</p>
+                    <p><strong>Results:</strong> Achieved 89% attribution accuracy across channels, improved marketing ROI by 340% through optimized budget allocation, and increased customer engagement by 56% through personalized omnichannel experiences and targeted interventions.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h2>Supply Chain Optimization with IoT Integration</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">42%</span>
+                            <span class="metric-label">Logistics Cost Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">98.7%</span>
+                            <span class="metric-label">On-Time Delivery Rate</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">25,000+</span>
+                            <span class="metric-label">IoT Sensors Deployed</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> Fashion retailer required end-to-end supply chain visibility from manufacturing to retail stores, incorporating IoT sensors for real-time tracking, predictive analytics for disruption management, and sustainability metrics.</p>
+                    <p><strong>Technical Solution:</strong> Implemented digital twin architecture with 25,000+ IoT sensors, machine learning models for demand sensing, and optimization algorithms for route planning using genetic algorithms and constraint programming.</p>
+                    <p><strong>Methodology:</strong> Applied network optimization with stochastic programming for uncertainty handling, time series analysis for demand sensing, and reinforcement learning for dynamic routing. Used blockchain for supply chain transparency and traceability.</p>
+                    <p><strong>Results:</strong> Reduced logistics costs by 42% through optimized routing and inventory placement, achieved 98.7% on-time delivery rate, and improved sustainability metrics with 28% reduction in carbon footprint through intelligent supply chain orchestration.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h2>Customer Churn Prediction with Behavioral Analytics</h2>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">91%</span>
+                            <span class="metric-label">Churn Prediction Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">67%</span>
+                            <span class="metric-label">Retention Rate Improvement</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$34.2M</span>
+                            <span class="metric-label">Revenue Retention</span>
+                        </div>
+                    </div>
+                    <p><strong>Challenge:</strong> Subscription-based retail service with 3.8M customers needed early churn prediction incorporating behavioral patterns, engagement metrics, and external factors for proactive retention strategies.</p>
+                    <p><strong>Technical Solution:</strong> Developed ensemble model combining gradient boosting, neural networks, and survival analysis with feature engineering pipeline processing clickstream data, transaction history, and customer service interactions using Apache Spark.</p>
+                    <p><strong>Methodology:</strong> Applied Cox proportional hazards models for time-to-churn analysis, recurrent neural networks for sequential behavior modeling, and SHAP values for feature importance ranking. Used active learning for continuous model improvement.</p>
+                    <p><strong>Results:</strong> Achieved 91% accuracy in predicting churn 60 days in advance, improved customer retention rate by 67% through targeted interventions, and retained $34.2M in annual revenue through proactive customer success programs and personalized offers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KLN Data Strategy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
