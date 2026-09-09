@@ -3,793 +3,927 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLN ONE | Enterprise AI Engineering & Consulting</title>
-    <meta name="description" content="KLN ONE helps enterprises design, build and deploy secure, scalable AI solutions — from AI ideas to production.">
-    <link rel="canonical" href="https://klnone.com/">
-    <!-- Inline SVG favicon: gold "1" mark on dark, no external file needed -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='40' font-weight='800' text-anchor='middle' fill='%23d4a641'%3E1%3C/text%3E%3C/svg%3E">
-    <meta name="theme-color" content="#0a0a0a">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="KLN ONE">
-    <meta property="og:title" content="KLN ONE | Enterprise AI Engineering & Consulting">
-    <meta property="og:description" content="From AI ideas to production — secure, scalable, intelligent AI solutions that drive real business value.">
-    <meta property="og:url" content="https://klnone.com/">
-    <meta property="og:image" content="https://klnone.com/og-image.png">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KLN ONE | Enterprise AI Engineering & Consulting">
-    <meta name="twitter:description" content="From AI ideas to production — secure, scalable, intelligent AI solutions that drive real business value.">
-    <meta name="twitter:image" content="https://klnone.com/og-image.png">
-
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "KLN ONE",
-        "description": "Enterprise AI engineering and consulting. From AI ideas to production — secure, scalable, intelligent AI solutions.",
-        "url": "https://klnone.com/",
-        "email": "hello@klnone.com",
-        "telephone": "+1-000-000-0000",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "San Francisco",
-            "addressRegion": "CA",
-            "addressCountry": "US"
-        },
-        "areaServed": "US",
-        "knowsAbout": ["Generative AI", "AI Engineering", "Snowflake", "Cloud Infrastructure", "AI Security", "Data Governance"]
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>KLN ONE - Enterprise AI Engineering & Consulting</title>
+    <!-- Inline SVG favicon: teal "1" mark on dark, no external file needed -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a2b27'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='40' font-weight='800' text-anchor='middle' fill='%2300a693'%3E1%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#00796B">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_professional.css?v=3">
+    <script defer src="script.js"></script>
     <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                colors: {
-                    ink: '#0a0a0a',
-                    coal: '#141414',
-                    // Gold scale — light shades reserved for small text so it clears WCAG AA on dark
-                    gold: {
-                        DEFAULT: '#d4a641',
-                        light: '#e8c877',   // for small/body text on dark (higher contrast)
-                        deep: '#b8862b',
-                        glow: '#f0cd85'
-                    }
+        // Dynamic image collections
+        const imageCollections = {
+            dataEngineering: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=300&h=150&fit=crop'
+            ],
+            dataScience: [
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=300&h=150&fit=crop'
+            ],
+            dataAnalysis: [
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=300&h=150&fit=crop'
+            ],
+            strategy: [
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=300&h=150&fit=crop'
+            ],
+            governance: [
+                'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=300&h=150&fit=crop'
+            ],
+            lifeSciences: [
+                'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300&h=150&fit=crop'
+            ],
+            tech: [
+                'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=300&h=150&fit=crop'
+            ],
+            retail: [
+                'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=300&h=150&fit=crop'
+            ],
+            financial: [
+                'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=300&h=150&fit=crop'
+            ],
+            manufacturing: [
+                'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=300&h=150&fit=crop',
+                'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=300&h=150&fit=crop'
+            ],
+            capabilities: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop'
+            ],
+            resources: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop'
+            ],
+            team: [
+                'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&h=300&fit=crop'
+            ],
+            legal: [
+                'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=300&fit=crop'
+            ]
+        };
+        
+        function getRandomImage(collection) {
+            return collection[Math.floor(Math.random() * collection.length)];
+        }
+        
+        function updateDynamicImages() {
+            // Visuals are now self-hosted CSS/SVG gradient panels (no external stock photos).
+            // Kept as a no-op so existing DOMContentLoaded wiring stays intact.
+        }
+        
+        // Update images when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDynamicImages();
+            updateDynamicContent();
+            updateDynamicFooter();
+            initVisualEnhancements();
+        });
+
+        // Scroll-reveal + animated count-up stats
+        function initVisualEnhancements() {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Scroll reveal
+            const revealEls = document.querySelectorAll('[data-reveal]');
+            if (reduce || !('IntersectionObserver' in window)) {
+                revealEls.forEach(function (el) { el.classList.add('revealed'); });
+            } else {
+                const revObs = new IntersectionObserver(function (entries, obs) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
+                    });
+                }, { threshold: 0.15 });
+                revealEls.forEach(function (el) { revObs.observe(el); });
+            }
+
+            // Animated stat count-up
+            const stats = document.querySelectorAll('.stat-num');
+            function animateStat(el) {
+                const target = parseFloat(el.dataset.target) || 0;
+                const suffix = el.dataset.suffix || '';
+                if (reduce) { el.textContent = target + suffix; return; }
+                const duration = 1500, start = performance.now();
+                function tick(now) {
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.round(target * eased) + suffix;
+                    if (p < 1) requestAnimationFrame(tick);
                 }
+                requestAnimationFrame(tick);
+            }
+            if ('IntersectionObserver' in window && stats.length) {
+                const statObs = new IntersectionObserver(function (entries, obs) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) { animateStat(entry.target); obs.unobserve(entry.target); }
+                    });
+                }, { threshold: 0.5 });
+                stats.forEach(function (s) { statObs.observe(s); });
+            } else {
+                stats.forEach(function (s) { s.textContent = s.dataset.target + (s.dataset.suffix || ''); });
             }
         }
-    }
+        
+        function updateDynamicFooter() {
+            const footerContent = {
+                capabilities: [
+                    { title: "Autonomous Data Intelligence", link: "enterprise-ai-implementation.html" },
+                    { title: "Cognitive Process Automation", link: "mlops-implementation-guide.html" },
+                    { title: "Predictive Business Modeling", link: "real-time-streaming-solutions.html" },
+                    { title: "Adaptive Cloud Ecosystems", link: "data-warehousing-solutions.html" },
+                    { title: "Quantum Analytics Preparation", link: "predictive-analytics-strategies.html" },
+                    { title: "Intelligent Data Orchestration", link: "data-pipeline-management.html" },
+                    { title: "Ethical AI Governance", link: "responsible-ai-governance.html" },
+                    { title: "Next-Gen Computing Readiness", link: "advanced-bi-techniques.html" }
+                ],
+                industries: [
+                    { title: "Digital Health Innovation", link: "financial-services.html" },
+                    { title: "Precision Medicine Analytics", link: "life-sciences.html" },
+                    { title: "Intelligent Manufacturing", link: "manufacturing-logistics.html" },
+                    { title: "Autonomous Systems Development", link: "tech-telecom-media.html" },
+                    { title: "Clean Energy Optimization", link: "energy-sector.html" },
+                    { title: "Personalized Commerce Platforms", link: "retail-cpg.html" },
+                    { title: "Space Data Analytics", link: "tech-telecom-media.html" },
+                    { title: "Environmental Intelligence", link: "energy-sector.html" }
+                ],
+                partners: [
+                    { title: "AWS GenAI Partnership", link: "aws-partnership.html" },
+                    { title: "Snowflake AI Data Cloud", link: "snowflake-alliance.html" },
+                    { title: "Microsoft Fabric Alliance", link: "microsoft-certified.html" },
+                    { title: "NVIDIA AI Computing", link: "technology-stack.html" },
+                    { title: "Databricks Lakehouse", link: "technology-stack.html" },
+                    { title: "Google Vertex AI", link: "technology-stack.html" },
+                    { title: "OpenAI Enterprise", link: "technology-stack.html" },
+                    { title: "Palantir Foundry", link: "technology-stack.html" }
+                ],
+                legal: [
+                    { title: "AI Governance Framework", link: "compliance.html" },
+                    { title: "Data Sovereignty Policy", link: "privacy-policy.html" },
+                    { title: "GDPR Compliance Guide", link: "cookie-policy.html" },
+                    { title: "Algorithmic Transparency", link: "terms-of-service.html" },
+                    { title: "Cross-Border Data Transfer", link: "privacy-policy.html" },
+                    { title: "Biometric Data Protection", link: "compliance.html" },
+                    { title: "AI Liability Framework", link: "terms-of-service.html" },
+                    { title: "Quantum Cryptography Standards", link: "compliance.html" }
+                ],
+                blog: [
+                    { title: "Ethical AI Implementation", link: "ai-ethics-and-compliance.html" },
+                    { title: "Intelligent Operations Framework", link: "mlops-implementation-guide.html" },
+                    { title: "Digital Transformation Strategies", link: "building-modern-data-pipelines.html" },
+                    { title: "Continuous Intelligence Systems", link: "real-time-streaming-solutions.html" },
+                    { title: "Distributed Data Architecture", link: "data-lake-vs-data-warehouse.html" },
+                    { title: "Cognitive AI Integration", link: "enterprise-ai-implementation.html" },
+                    { title: "Zero-Trust Data Security", link: "responsible-ai-governance.html" },
+                    { title: "Edge Intelligence Computing", link: "predictive-analytics-strategies.html" }
+                ],
+                caseStudies: [
+                    { title: "Medical AI Breakthrough", link: "clinical-trial-optimization.html" },
+                    { title: "Quantum Risk Assessment", link: "financial-cases.html" },
+                    { title: "Smart Factory Analytics", link: "manufacturing-cases.html" },
+                    { title: "Personalization Engine Success", link: "retail-cases.html" },
+                    { title: "Network Intelligence Optimization", link: "telecom-cases.html" },
+                    { title: "Renewable Energy Analytics", link: "energy-sector.html" },
+                    { title: "Drug Discovery Acceleration", link: "drug-discovery-analytics.html" },
+                    { title: "Supply Chain Intelligence", link: "manufacturing-logistics.html" }
+                ],
+                aboutUs: [
+                    { title: "Research & Development Hub", link: "technology-stack.html" },
+                    { title: "Strategic Alliances", link: "community-contributions.html" },
+                    { title: "Industry Leadership", link: "technical-articles.html" },
+                    { title: "Excellence Recognition", link: "success-stories.html" },
+                    { title: "Market Expansion", link: "news.html" },
+                    { title: "Environmental Responsibility", link: "our-mission.html" },
+                    { title: "Inclusive Innovation", link: "company-culture.html" },
+                    { title: "Leadership Excellence", link: "our-team.html" }
+                ]
+            };
+            
+            // Update Capabilities section
+            const capabilitiesSection = document.querySelector('.footer-section:nth-child(1) ul');
+            if (capabilitiesSection) {
+                const randomCapItems = getRandomItems(footerContent.capabilities, 4);
+                capabilitiesSection.innerHTML = randomCapItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Industries section
+            const industriesSection = document.querySelector('.footer-section:nth-child(2) ul');
+            if (industriesSection) {
+                const randomIndItems = getRandomItems(footerContent.industries, 5);
+                industriesSection.innerHTML = randomIndItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Blog section
+            const blogSection = document.querySelector('.footer-section:nth-child(3) ul');
+            if (blogSection) {
+                const randomBlogItems = getRandomItems(footerContent.blog, 3);
+                blogSection.innerHTML = randomBlogItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Case Studies section
+            const caseStudiesSection = document.querySelector('.footer-section:nth-child(4) ul');
+            if (caseStudiesSection) {
+                const randomCaseItems = getRandomItems(footerContent.caseStudies, 3);
+                caseStudiesSection.innerHTML = randomCaseItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update About Us section
+            const aboutUsSection = document.querySelector('.footer-section:nth-child(5) ul');
+            if (aboutUsSection) {
+                const randomAboutItems = getRandomItems(footerContent.aboutUs, 4);
+                aboutUsSection.innerHTML = randomAboutItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Partners section
+            const partnersSection = document.querySelector('.footer-section:nth-child(6) ul');
+            if (partnersSection) {
+                const randomPartnerItems = getRandomItems(footerContent.partners, 4);
+                partnersSection.innerHTML = randomPartnerItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+            
+            // Update Legal section
+            const legalSection = document.querySelector('.footer-section:nth-child(7) ul');
+            if (legalSection) {
+                const randomLegalItems = getRandomItems(footerContent.legal, 4);
+                legalSection.innerHTML = randomLegalItems.map(item => 
+                    `<li><a href="${item.link}">${item.title}</a></li>`
+                ).join('');
+            }
+        }
+        
+        function updateDynamicContent() {
+            const contentVariations = {
+                capabilities: [
+                    {
+                        title: "Intelligent Data Orchestration",
+                        description: "Building autonomous data ecosystems that self-optimize performance, predict infrastructure needs, and automatically scale resources based on business demand patterns.",
+                        link: "machine-learning-models.html"
+                    },
+                    {
+                        title: "Cognitive Analytics Platform",
+                        description: "Developing AI-powered analytical frameworks that understand context, learn from patterns, and deliver predictive insights for strategic business transformation.",
+                        link: "data-warehousing-solutions.html"
+                    },
+                    {
+                        title: "Adaptive Intelligence Systems",
+                        description: "Creating responsive data architectures that evolve with changing business requirements while maintaining security, compliance, and operational excellence.",
+                        link: "real-time-streaming-solutions.html"
+                    }
+                ],
+                industries: [
+                    {
+                        sector: "Precision Healthcare Analytics",
+                        description: "Accelerating medical breakthroughs through genomic pattern recognition, treatment outcome modeling, and personalized therapy optimization using advanced computational biology.",
+                        link: "clinical-trial-optimization.html"
+                    },
+                    {
+                        sector: "Quantum Financial Modeling",
+                        description: "Revolutionizing risk assessment and portfolio optimization through quantum-inspired algorithms, behavioral economics modeling, and real-time market sentiment analysis.",
+                        link: "financial-services.html"
+                    },
+                    {
+                        sector: "Sustainable Energy Intelligence",
+                        description: "Optimizing renewable energy distribution through predictive weather modeling, consumption forecasting, and intelligent grid management for carbon-neutral operations.",
+                        link: "energy-sector.html"
+                    }
+                ],
+                resources: [
+                    {
+                        type: "Strategic Innovation Blueprints",
+                        content: "Comprehensive frameworks for implementing next-generation data architectures with measurable business impact and competitive differentiation.",
+                        link: "technical-articles.html"
+                    },
+                    {
+                        type: "Performance Excellence Metrics",
+                        content: "Quantitative analysis of data transformation outcomes across industries with actionable insights for optimization and scaling strategies.",
+                        link: "industry-trends.html"
+                    },
+                    {
+                        type: "Transformation Accelerators",
+                        content: "Proven methodologies for rapid deployment of intelligent data solutions with risk mitigation and change management best practices.",
+                        link: "latest-insights.html"
+                    }
+                ]
+            };
+            
+            // Randomly select and update capability descriptions
+            const capabilityCards = document.querySelectorAll('.capability-card');
+            if (capabilityCards.length >= 3) {
+                const randomCapabilities = getRandomItems(contentVariations.capabilities, 3);
+                randomCapabilities.forEach((content, index) => {
+                    if (capabilityCards[index]) {
+                        const titleElement = capabilityCards[index].querySelector('h3');
+                        const descElement = capabilityCards[index].querySelector('p');
+                        if (titleElement && descElement) {
+                            titleElement.textContent = content.title;
+                            descElement.textContent = content.description;
+                        }
+                    }
+                });
+            }
+            
+            // Update industry case studies
+            const resourceItems = document.querySelectorAll('.resource-item');
+            if (resourceItems.length >= 3) {
+                const randomIndustries = getRandomItems(contentVariations.industries, 3);
+                randomIndustries.forEach((content, index) => {
+                    if (resourceItems[index]) {
+                        const titleElement = resourceItems[index].querySelector('h4');
+                        const descElement = resourceItems[index].querySelector('p');
+                        const linkElement = resourceItems[index].querySelector('.resource-link');
+                        if (titleElement && descElement && linkElement) {
+                            titleElement.textContent = content.sector;
+                            descElement.textContent = content.description;
+                            linkElement.href = content.link;
+                        }
+                    }
+                });
+            }
+            
+            // Update blog post links dynamically
+            const blogLinks = document.querySelectorAll('.blog-post-link');
+            const randomResources = getRandomItems(contentVariations.resources, Math.min(blogLinks.length, 6));
+            randomResources.forEach((content, index) => {
+                if (blogLinks[index]) {
+                    blogLinks[index].textContent = content.type;
+                    blogLinks[index].href = content.link;
+                    blogLinks[index].title = content.content;
+                }
+            });
+        }
+        
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
     </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .hero-section { position: relative; min-height: 100vh; }
-        .hero-vanta { position: absolute; inset: 0; z-index: 0; }
-        .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px);
-            border: 1px solid rgba(212,166,65,0.12); }
-        .card-glow:hover { box-shadow: 0 0 40px rgba(212,166,65,0.18); border-color: rgba(212,166,65,0.4); }
-        .gradient-text { background: linear-gradient(135deg, #f0cd85, #d4a641, #b8862b);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .btn-glow:hover { box-shadow: 0 0 30px rgba(212,166,65,0.45); }
-        nav.scrolled { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); }
-        nav a.active { color: #e8c877; }
-        /* Keyboard focus visibility */
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-            outline: 2px solid #e8c877; outline-offset: 2px; border-radius: 6px;
-        }
-        .skip-link { position: absolute; left: -999px; top: 0; z-index: 100;
-            background: #d4a641; color: #0a0a0a; padding: 10px 16px; font-weight: 700; border-radius: 0 0 8px 0; }
-        .skip-link:focus { left: 0; }
-        /* Respect users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-        }
-    </style>
 </head>
-<body class="bg-ink text-white font-sans antialiased">
-
-    <a href="#main" class="skip-link">Skip to content</a>
-
-    <!-- NAV -->
-    <nav id="mainNav" aria-label="Primary" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-            <a href="#" class="flex items-center" aria-label="KLN ONE - home">
-                <span class="inline-flex flex-col leading-none select-none">
-                    <span class="text-2xl font-extrabold tracking-tight">
-                        <span class="text-white">KLN</span><span class="gradient-text"> ONE</span>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#hero" aria-label="KLN ONE - home" style="text-decoration: none; display: inline-flex; flex-direction: column; line-height: 1;">
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; letter-spacing: -0.5px;">
+                        <span style="color: #00796B;">KLN</span><span style="color: #004D40;"> ONE</span>
                     </span>
-                    <span class="mt-1 h-px w-full bg-gradient-to-r from-gold-glow via-gold to-gold-deep"></span>
-                    <span class="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-gold-light/80">Enterprise AI Engineering &amp; Consulting</span>
-                </span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#services" class="text-sm text-gray-300 hover:text-gold-light transition">Services</a>
-                <a href="#approach" class="text-sm text-gray-300 hover:text-gold-light transition">Approach</a>
-                <a href="#impact" class="text-sm text-gray-300 hover:text-gold-light transition">Impact</a>
-                <a href="#industries" class="text-sm text-gray-300 hover:text-gold-light transition">Industries</a>
-                <a href="#about" class="text-sm text-gray-300 hover:text-gold-light transition">About</a>
+                    <span style="display:block; height: 3px; width: 100%; margin-top: 4px; background: linear-gradient(135deg, #00796B, #004D40); border-radius: 2px;"></span>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #00796B; margin-top: 4px;">Enterprise AI Engineering &amp; Consulting</span>
+                </a>
             </div>
-            <a href="#contact" class="hidden md:inline-block text-sm font-semibold px-5 py-2.5 rounded-full bg-gold text-ink hover:bg-gold-glow transition btn-glow">Get in Touch →</a>
-            <button id="mobileBtn" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-        </div>
-    </nav>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-ink/98 z-40 hidden flex-col items-center justify-center gap-8">
-        <a href="#services" class="text-2xl text-white mob-link">Services</a>
-        <a href="#approach" class="text-2xl text-white mob-link">Approach</a>
-        <a href="#impact" class="text-2xl text-white mob-link">Impact</a>
-        <a href="#industries" class="text-2xl text-white mob-link">Industries</a>
-        <a href="#about" class="text-2xl text-white mob-link">About</a>
-        <a href="#contact" class="text-lg font-semibold px-6 py-3 bg-gold text-ink rounded-full mob-link">Get in Touch →</a>
-    </div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#working-with-us">Working with Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- HERO with Vanta.js 3D animated net -->
-    <main id="main">
-    <section class="hero-section flex items-center">
-        <div id="heroVanta" class="hero-vanta" aria-hidden="true"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-6" data-aos="fade-up">Enterprise AI Engineering & Consulting</p>
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.05] mb-6" data-aos="fade-up" data-aos-delay="100">
-                    From AI ideas to <span class="gradient-text">production.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                    We help enterprises design, build and deploy secure, scalable and intelligent AI solutions that drive real business value.
-                </p>
-                <div class="flex gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#contact" class="px-8 py-4 bg-gold text-ink font-bold rounded-full hover:bg-gold-glow transition btn-glow">Get Started →</a>
-                    <a href="#services" class="px-8 py-4 border border-gold/40 text-gold-light font-semibold rounded-full hover:border-gold hover:bg-gold/5 transition">Explore Our Services</a>
+    <main>
+        <section id="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="eyebrow">Enterprise AI Engineering &amp; Consulting</span>
+                    <h1>From AI ideas to <span class="hero-accent">production.</span></h1>
+                    <p class="hero-subtitle">Secure, scalable, intelligent AI — built on a solid data foundation.</p>
+                    <p>We help enterprises design, build, and deploy AI solutions that reach production, combining deep engineering expertise with modern cloud and data platforms to drive real business value.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button primary">Get Started</a>
+                        <a href="#capabilities" class="cta-button secondary">Explore Capabilities</a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <svg viewBox="0 0 420 420" class="ai-orb" role="img" aria-label="AI network">
+                        <defs>
+                            <radialGradient id="orbCore" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#4db6ac"/>
+                                <stop offset="100%" stop-color="#00695C"/>
+                            </radialGradient>
+                        </defs>
+                        <g stroke="#00796B" stroke-width="1" opacity="0.35">
+                            <line x1="210" y1="210" x2="90" y2="95"/>
+                            <line x1="210" y1="210" x2="340" y2="115"/>
+                            <line x1="210" y1="210" x2="70" y2="255"/>
+                            <line x1="210" y1="210" x2="350" y2="275"/>
+                            <line x1="210" y1="210" x2="150" y2="350"/>
+                            <line x1="210" y1="210" x2="285" y2="350"/>
+                            <line x1="90" y1="95" x2="340" y2="115"/>
+                            <line x1="70" y1="255" x2="150" y2="350"/>
+                            <line x1="350" y1="275" x2="285" y2="350"/>
+                            <line x1="340" y1="115" x2="350" y2="275"/>
+                        </g>
+                        <circle cx="210" cy="210" r="158" fill="none" stroke="#00796B" stroke-width="1" opacity="0.25">
+                            <animate attributeName="r" values="154;162;154" dur="6s" repeatCount="indefinite"/>
+                        </circle>
+                        <g fill="#26a69a">
+                            <circle cx="90" cy="95" r="7"><animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/></circle>
+                            <circle cx="340" cy="115" r="7"><animate attributeName="opacity" values="1;0.4;1" dur="3.6s" repeatCount="indefinite"/></circle>
+                            <circle cx="70" cy="255" r="7"><animate attributeName="opacity" values="0.5;1;0.5" dur="4.1s" repeatCount="indefinite"/></circle>
+                            <circle cx="350" cy="275" r="7"><animate attributeName="opacity" values="1;0.5;1" dur="3.3s" repeatCount="indefinite"/></circle>
+                            <circle cx="150" cy="350" r="7"><animate attributeName="opacity" values="0.4;1;0.4" dur="4.6s" repeatCount="indefinite"/></circle>
+                            <circle cx="285" cy="350" r="7"><animate attributeName="opacity" values="0.6;1;0.6" dur="3.9s" repeatCount="indefinite"/></circle>
+                        </g>
+                        <circle cx="210" cy="210" r="54" fill="url(#orbCore)" opacity="0.95">
+                            <animate attributeName="r" values="52;58;52" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="210" y="222" text-anchor="middle" font-size="34" font-weight="800" fill="#ffffff" font-family="Montserrat, sans-serif">AI</text>
+                    </svg>
                 </div>
             </div>
+        </section>
 
-            <!-- Hero visual: animated gold neural network / AI core -->
-            <div class="hidden lg:flex justify-center items-center" data-aos="fade-left" data-aos-delay="200" aria-hidden="true">
-                <svg viewBox="0 0 400 400" class="w-full max-w-md drop-shadow-[0_0_40px_rgba(212,166,65,0.25)]" fill="none">
-                    <defs>
-                        <radialGradient id="core" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#f0cd85"/>
-                            <stop offset="100%" stop-color="#b8862b"/>
-                        </radialGradient>
-                    </defs>
-                    <!-- connective lines -->
-                    <g stroke="#d4a641" stroke-width="1" opacity="0.35">
-                        <line x1="200" y1="200" x2="80" y2="90"/>
-                        <line x1="200" y1="200" x2="330" y2="110"/>
-                        <line x1="200" y1="200" x2="60" y2="250"/>
-                        <line x1="200" y1="200" x2="340" y2="270"/>
-                        <line x1="200" y1="200" x2="150" y2="340"/>
-                        <line x1="200" y1="200" x2="270" y2="340"/>
-                        <line x1="80" y1="90" x2="330" y2="110"/>
-                        <line x1="60" y1="250" x2="150" y2="340"/>
-                        <line x1="340" y1="270" x2="270" y2="340"/>
-                        <line x1="330" y1="110" x2="340" y2="270"/>
-                    </g>
-                    <!-- outer orbit -->
-                    <circle cx="200" cy="200" r="150" stroke="#d4a641" stroke-width="1" opacity="0.2">
-                        <animate attributeName="r" values="148;152;148" dur="6s" repeatCount="indefinite"/>
-                    </circle>
-                    <!-- node pulses -->
-                    <g fill="#e8c877">
-                        <circle cx="80" cy="90" r="6"><animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/></circle>
-                        <circle cx="330" cy="110" r="6"><animate attributeName="opacity" values="1;0.4;1" dur="3.5s" repeatCount="indefinite"/></circle>
-                        <circle cx="60" cy="250" r="6"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle>
-                        <circle cx="340" cy="270" r="6"><animate attributeName="opacity" values="1;0.5;1" dur="3.2s" repeatCount="indefinite"/></circle>
-                        <circle cx="150" cy="340" r="6"><animate attributeName="opacity" values="0.4;1;0.4" dur="4.5s" repeatCount="indefinite"/></circle>
-                        <circle cx="270" cy="340" r="6"><animate attributeName="opacity" values="0.6;1;0.6" dur="3.8s" repeatCount="indefinite"/></circle>
-                    </g>
-                    <!-- glowing AI core -->
-                    <circle cx="200" cy="200" r="52" fill="url(#core)" opacity="0.9">
-                        <animate attributeName="r" values="50;56;50" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="200" y="212" text-anchor="middle" font-size="36" font-weight="800" fill="#0a0a0a" font-family="Plus Jakarta Sans, sans-serif">AI</text>
-                </svg>
+        <section id="stats" class="stats-band">
+            <div class="stats-grid">
+                <div class="stat-item" data-reveal>
+                    <div class="stat-num" data-target="15" data-suffix="+">0</div>
+                    <div class="stat-label">Years Enterprise Delivery</div>
+                </div>
+                <div class="stat-item" data-reveal>
+                    <div class="stat-num" data-target="50" data-suffix="M+">0</div>
+                    <div class="stat-label">Records Processed Daily</div>
+                </div>
+                <div class="stat-item" data-reveal>
+                    <div class="stat-num" data-target="35" data-suffix="%">0</div>
+                    <div class="stat-label">Avg. Cost Reduction</div>
+                </div>
+                <div class="stat-item" data-reveal>
+                    <div class="stat-num" data-target="93" data-suffix="%">0</div>
+                    <div class="stat-label">Faster Time-to-Insight</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TRUST NUMBERS -->
-    <section class="border-t border-gold/10">
-        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div data-aos="fade-up">
-                <div class="text-4xl font-extrabold gradient-text stat" data-target="15" data-suffix="+">0</div>
-                <div class="text-sm text-gray-400 mt-1">Years Enterprise Delivery</div>
+        <section id="capabilities">
+            <span class="eyebrow eyebrow-center">Capabilities</span>
+            <h2>Our Capabilities</h2>
+            <p class="section-intro">Turning enterprise AI ambitions into production reality — from strategy and data foundations to secure, scalable models and MLOps — through advanced engineering, modern cloud platforms, and proven delivery frameworks that drive measurable business outcomes.</p>
+            <div class="capabilities-grid">
+                <div class="capability-card" data-reveal>
+                    <div class="card-media" role="img" aria-label="Data Engineering">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+                    </div>
+                    <h3>Data Engineering</h3>
+                    <p>Enterprise-grade data infrastructure using cloud-native architectures, distributed processing frameworks, and DataOps methodologies. We implement fault-tolerant pipelines with Apache Spark, Kafka, and Kubernetes that handle petabyte-scale datasets with microsecond latency requirements.</p>
+                    <ul class="capability-list">
+                        <li>Real-time Stream Processing & Event Architecture</li>
+                        <li>Cloud Data Warehousing (Snowflake, Redshift, BigQuery)</li>
+                        <li>Data Lake & Lakehouse Implementation (Delta Lake, Iceberg)</li>
+                        <li>MLOps & DataOps Pipeline Automation</li>
+                    </ul>
+                </div>
+                <div class="capability-card" data-reveal>
+                    <div class="card-media" role="img" aria-label="Data Science & AI">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="1.6"/><circle cx="19" cy="6" r="1.6"/><circle cx="5" cy="18" r="1.6"/><circle cx="19" cy="18" r="1.6"/><path d="M9.6 10.6 6.2 7.2M14.4 10.6l3.4-3.4M9.6 13.4l-3.4 3.4M14.4 13.4l3.4 3.4"/></svg>
+                    </div>
+                    <h3>Data Science & AI</h3>
+                    <p>Advanced machine learning and AI solutions using transformer architectures, ensemble methods, and deep neural networks. We implement production-grade ML systems with automated retraining, bias detection, and explainable AI for regulatory compliance and business transparency.</p>
+                    <ul class="capability-list">
+                        <li>Large Language Models & Generative AI Integration</li>
+                        <li>Computer Vision & NLP with Transformer Architecture</li>
+                        <li>Predictive Analytics & Time Series Forecasting</li>
+                        <li>Responsible AI & Algorithmic Bias Mitigation</li>
+                    </ul>
+                </div>
+                <div class="capability-card" data-reveal>
+                    <div class="card-media" role="img" aria-label="Data Analysis">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="10" rx="1"/><rect x="17" y="13" width="3" height="4" rx="1"/></svg>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Sophisticated analytical frameworks combining statistical rigor with interactive visualization and self-service capabilities. We implement advanced techniques including causal inference, Bayesian statistics, and multivariate analysis to deliver actionable insights that drive strategic decision-making.</p>
+                    <ul class="capability-list">
+                        <li>Advanced Statistical Modeling & Hypothesis Testing</li>
+                        <li>Interactive BI Platforms & Self-Service Analytics</li>
+                        <li>Geospatial Analytics & Network Analysis</li>
+                        <li>A/B Testing & Experimental Design Frameworks</li>
+                    </ul>
+                </div>
+                <div class="capability-card" data-reveal>
+                    <div class="card-media" role="img" aria-label="AI Strategy & Consulting">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.37.85.9.98 1.5l.22 1.2h4.8l.22-1.2c.13-.6.48-1.13.98-1.5A6 6 0 0 0 12 3Z"/><path d="M9.5 20h5M10 22h4"/></svg>
+                    </div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Comprehensive transformation guidance combining AI roadmapping, use-case discovery, and ROI modeling. We develop AI and data maturity assessments, governance frameworks, and pragmatic implementation plans that align AI initiatives with clear business objectives.</p>
+                    <ul class="capability-list">
+                        <li>AI Roadmaps, Use-Case Discovery & ROI Modeling</li>
+                        <li>Digital Transformation & Change Management</li>
+                        <li>AI & Data Governance Frameworks (GDPR, HIPAA)</li>
+                        <li>Cloud Migration & Architecture Modernization</li>
+                    </ul>
+                </div>
+                <div class="capability-card" data-reveal>
+                    <div class="card-media" role="img" aria-label="Data Governance & Security">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 9 4-1 7-4.5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg>
+                    </div>
+                    <h3>Data Governance & Security</h3>
+                    <p>Enterprise governance frameworks ensuring data quality, privacy, and regulatory compliance through automated monitoring, lineage tracking, and risk management. We implement zero-trust architectures with encryption, access controls, and comprehensive audit capabilities.</p>
+                    <ul class="capability-list">
+                        <li>Privacy-Preserving Analytics & Differential Privacy</li>
+                        <li>Master Data Management & Data Quality Automation</li>
+                        <li>Regulatory Compliance (Basel III, SOX, FDA 21 CFR Part 11)</li>
+                        <li>Data Lineage & Impact Analysis Systems</li>
+                    </ul>
+                </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <div class="text-4xl font-extrabold gradient-text stat" data-target="50" data-suffix="M+">0</div>
-                <div class="text-sm text-gray-400 mt-1">Records Processed Daily</div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <div class="text-4xl font-extrabold gradient-text stat" data-target="35" data-suffix="%">0</div>
-                <div class="text-sm text-gray-400 mt-1">Avg. Cost Reduction</div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <div class="text-4xl font-extrabold gradient-text stat" data-target="93" data-suffix="%">0</div>
-                <div class="text-sm text-gray-400 mt-1">Faster Time-to-Insight</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16" data-aos="fade-up">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3">Services</p>
-                <h2 class="text-4xl md:text-5xl font-extrabold">What we deliver.</h2>
-                <p class="text-gray-300 text-lg mt-3 max-w-lg">End-to-end AI engineering from strategy through production deployment.</p>
+        <section id="resources" style="background: var(--surface);">
+            <h2 style="text-align: center;">Resources</h2>
+            <div class="content-image" role="img" aria-label="Resources" style="margin-bottom: 3rem;"></div>
+            <p class="section-intro" style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 3rem; color: #495057; line-height: 1.7;">Access our comprehensive library of case studies, videos, and insights across industries and technologies.</p>
+            
+            <div class="resources-container">
+                <div class="resource-section">
+                    <h3>Case Studies</h3>
+                    <div class="resource-grid">
+                        <div class="resource-item">
+                            <div class="card-media" role="img" aria-label="Life Sciences">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3h6M10 3v4.5L6 15a3 3 0 0 0 2.7 4.3h6.6A3 3 0 0 0 18 15l-4-7.5V3"/><path d="M8 13h8"/></svg>
+                            </div>
+                            <h4>Life Sciences</h4>
+                            <p>Genomic data pipeline processing 50TB+ datasets with Apache Spark, reducing clinical trial patient stratification time by 73% using ML-based biomarker discovery and FDA 21 CFR Part 11 compliant data lineage tracking</p>
+                            <a href="life-sciences-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="card-media" role="img" aria-label="Tech, Telecom, & Media">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0M8 16a6 6 0 0 1 8 0"/><circle cx="12" cy="19" r="1.4"/><path d="M2 10a15 15 0 0 1 20 0"/></svg>
+                            </div>
+                            <h4>Tech, Telecom, & Media</h4>
+                            <p>Real-time network anomaly detection using LSTM neural networks and Kafka streaming, achieving 99.7% accuracy in predicting service degradation 15 minutes before occurrence, reducing customer churn by 34%</p>
+                            <a href="telecom-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="card-media" role="img" aria-label="CPG & Retail">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h2l2 12h9l2-8H7"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+                            </div>
+                            <h4>CPG & Retail</h4>
+                            <p>Multi-armed bandit recommendation system with transformer-based embeddings, increasing conversion rates by 47% while implementing differential privacy for GDPR compliance across 12M+ customer profiles</p>
+                            <a href="retail-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="card-media" role="img" aria-label="Financial Services">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M4 10h16M12 3 4 7h16l-8-4ZM6 10v7M10 10v7M14 10v7M18 10v7"/></svg>
+                            </div>
+                            <h4>Financial Services</h4>
+                            <p>Graph neural network fraud detection system processing 2M+ transactions/second with <50ms latency, achieving 0.02% false positive rate while maintaining Basel III compliance and explainable AI requirements</p>
+                            <a href="financial-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="card-media" role="img" aria-label="Manufacturing & Logistics">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21V10l6 4V10l6 4V6l6 3v12H3Z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/></svg>
+                            </div>
+                            <h4>Manufacturing & Logistics</h4>
+                            <p>IoT-enabled predictive maintenance using ensemble methods and edge computing, reducing unplanned downtime by 68% and maintenance costs by $2.3M annually through vibration analysis and thermal imaging ML models</p>
+                            <a href="manufacturing-cases.html" class="resource-link">View Case Studies →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-section">
+                    <h3>Videos</h3>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <a href="building-modern-data-pipelines.html" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                </div>
+                                <h4>Data Engineering Best Practices</h4>
+                                <p>Learn how to build scalable data pipelines</p>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a href="enterprise-ai-implementation.html" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                </div>
+                                <h4>Generative AI in Enterprise</h4>
+                                <p>Implementing AI solutions for business transformation</p>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a href="genomic-data-analysis.html" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                </div>
+                                <h4>Bioinformatics Solutions</h4>
+                                <p>Advanced analytics for life sciences research</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-section">
+                    <h3>Blog Posts</h3>
+                    <div class="blog-categories">
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Data Engineering"></div>
+                            <h4>Data Engineering</h4>
+                            <div class="blog-posts">
+                                <a href="building-modern-data-pipelines.html" class="blog-post-link">Building Modern Data Pipelines</a>
+                                <a href="data-lake-vs-data-warehouse.html" class="blog-post-link">Data Lake vs Data Warehouse</a>
+                                <a href="real-time-streaming-solutions.html" class="blog-post-link">Real-time Streaming Solutions</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Data Analysis"></div>
+                            <h4>Data Analysis</h4>
+                            <div class="blog-posts">
+                                <a href="advanced-bi-techniques.html" class="blog-post-link">Advanced BI Techniques</a>
+                                <a href="statistical-analysis-methods.html" class="blog-post-link">Statistical Analysis Methods</a>
+                                <a href="data-visualization-best-practices.html" class="blog-post-link">Data Visualization Best Practices</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Data Science"></div>
+                            <h4>Data Science</h4>
+                            <div class="blog-posts">
+                                <a href="machine-learning-model-selection.html" class="blog-post-link">Machine Learning Model Selection</a>
+                                <a href="mlops-implementation-guide.html" class="blog-post-link">MLOps Implementation Guide</a>
+                                <a href="predictive-analytics-strategies.html" class="blog-post-link">Predictive Analytics Strategies</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Generative AI"></div>
+                            <h4>Generative AI</h4>
+                            <div class="blog-posts">
+                                <a href="enterprise-ai-implementation.html" class="blog-post-link">Enterprise AI Implementation</a>
+                                <a href="responsible-ai-governance.html" class="blog-post-link">Responsible AI Governance</a>
+                                <a href="ai-ethics-and-compliance.html" class="blog-post-link">AI Ethics and Compliance</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Bioinformatics"></div>
+                            <h4>Bioinformatics</h4>
+                            <div class="blog-posts">
+                                <a href="genomic-data-analysis.html" class="blog-post-link">Genomic Data Analysis</a>
+                                <a href="clinical-trial-optimization.html" class="blog-post-link">Clinical Trial Optimization</a>
+                                <a href="drug-discovery-analytics.html" class="blog-post-link">Drug Discovery Analytics</a>
+                            </div>
+                        </div>
+                        <div class="blog-category">
+                            <div class="blog-image" role="img" aria-label="Open Source"></div>
+                            <h4>Open Source</h4>
+                            <div class="blog-posts">
+                                <a href="open-source-data-tools.html" class="blog-post-link">Open Source Data Tools</a>
+                                <a href="community-contributions.html" class="blog-post-link">Community Contributions</a>
+                                <a href="building-with-open-standards.html" class="blog-post-link">Building with Open Standards</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">AI Strategy & Consulting</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Turn business challenges into AI opportunities. Roadmaps, use-case discovery, and ROI modeling.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">AI Engineering & Development</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Build intelligent, production-ready AI solutions — RAG, agents, Text-to-SQL, LangChain, Cortex, Bedrock.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Cloud & Modern Infrastructure</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Scalable, secure technology for AI transformation. AWS, Azure, Snowflake, Terraform, IaC from day one.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">AI Security & Governance</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Responsible and trusted AI systems. RBAC, masking, encryption, audit controls, and compliance frameworks.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Analytics & BI</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Tableau, Power BI, forecasting models. Reporting and insight that drives operational decisions.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Data & Snowflake Platforms</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Architecture, migration, and optimization. SnowPro certified, 50M+ records/day at production SLA.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- APPROACH -->
-    <section id="approach" class="py-24 px-6 border-t border-gold/10 bg-gradient-to-b from-gold/[0.04] to-transparent">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-14" data-aos="fade-up">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3">Our Approach</p>
-                <h2 class="text-4xl md:text-5xl font-extrabold">End-to-end AI engineering for business success.</h2>
+        <section id="working-with-us" style="background: var(--surface-2);">
+            <h2 style="text-align: center;">Working with Us</h2>
+            <div class="content-image" role="img" aria-label="Working with the KLN ONE team" style="margin-bottom: 3rem;"></div>
+            <div class="about-container">
+                <div class="working-grid">
+                    <div class="working-section">
+                        <h3>About Us</h3>
+                        <div class="subsection">
+                            <h4>Vision & Mission</h4>
+                            <p><strong>Vision:</strong> To be the trusted partner that transforms data into clarity, empowering organizations to innovate, grow, and lead with confidence.</p>
+                            <p><strong>Mission:</strong> To simplify complexity and unlock the true potential of data through clear, actionable strategies and sustainable solutions.</p>
+                        </div>
+                        <div class="subsection">
+                            <h4>Core Values</h4>
+                            <ul>
+                                <li><strong>Clarity</strong> – Turning complexity into direction</li>
+                                <li><strong>Trust</strong> – Delivering secure, reliable insights</li>
+                                <li><strong>Innovation</strong> – Leveraging modern technology</li>
+                                <li><strong>Partnership</strong> – Walking alongside clients</li>
+                                <li><strong>Growth</strong> – Driving measurable results</li>
+                            </ul>
+                        </div>
+                        <div class="subsection">
+                            <h4>Our Approach</h4>
+                            <p>We offer complete data and AI solutions to enhance organizations at every stage of their data journey, from strategy development to implementation and optimization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>News & Announcements</h3>
+                        <div class="news-item">
+                            <h4>Q4 2024 Partnership Expansion</h4>
+                            <p>New strategic partnerships with leading cloud providers enhance our service delivery capabilities.</p>
+                        </div>
+                        <div class="news-item">
+                            <h4>Industry Recognition</h4>
+                            <p>Named as a top data consulting firm by industry analysts for innovation in AI and machine learning solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Careers</h3>
+                        <p>Join our team of data experts and help shape the future of data-driven organizations. We offer competitive compensation, flexible work arrangements, and opportunities for professional growth.</p>
+                        <div class="career-links">
+                            <a href="open-positions.html" class="career-link">View Open Positions</a>
+                            <a href="company-culture.html" class="career-link">Company Culture</a>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Partners</h3>
+                        <div class="partners-compact">
+                            <a href="aws-partnership.html" class="partner-item">
+                                <span>AWS Advanced Partner</span>
+                            </a>
+                            <a href="snowflake-alliance.html" class="partner-item">
+                                <span>Snowflake Elite Partner</span>
+                            </a>
+                            <a href="microsoft-certified.html" class="partner-item">
+                                <span>Microsoft Gold Certified</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="working-section">
+                        <h3>Industries</h3>
+                        <div class="industries-compact">
+                            <a href="life-sciences-cases.html" class="industry-link">🧬 Life Sciences</a>
+                            <a href="financial-cases.html" class="industry-link">🏦 Financial Services</a>
+                            <a href="telecom-cases.html" class="industry-link">📱 Tech & Telecom</a>
+                            <a href="manufacturing-cases.html" class="industry-link">🏢 Manufacturing</a>
+                            <a href="retail-cases.html" class="industry-link">🛍️ Retail & CPG</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ol class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                <li class="text-center" data-aos="fade-up">
-                    <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607Z"/></svg>
-                    </div>
-                    <h4 class="font-bold">Discover</h4>
-                    <p class="text-sm text-gray-400 mt-1">Understand & Define</p>
-                </li>
-                <li class="text-center" data-aos="fade-up" data-aos-delay="80">
-                    <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
-                    </div>
-                    <h4 class="font-bold">Design</h4>
-                    <p class="text-sm text-gray-400 mt-1">Architect & Plan</p>
-                </li>
-                <li class="text-center" data-aos="fade-up" data-aos-delay="160">
-                    <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
-                    </div>
-                    <h4 class="font-bold">Build</h4>
-                    <p class="text-sm text-gray-400 mt-1">Develop & Integrate</p>
-                </li>
-                <li class="text-center" data-aos="fade-up" data-aos-delay="240">
-                    <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 2.65m5.96 11.72a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold">Deploy</h4>
-                    <p class="text-sm text-gray-400 mt-1">Go Live with Confidence</p>
-                </li>
-                <li class="text-center" data-aos="fade-up" data-aos-delay="320">
-                    <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
-                    </div>
-                    <h4 class="font-bold">Improve</h4>
-                    <p class="text-sm text-gray-400 mt-1">Measure & Scale</p>
-                </li>
-            </ol>
-        </div>
-    </section>
+        </section>
 
-    <!-- IMPACT -->
-    <section id="impact" class="py-24 px-6 border-t border-gold/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16" data-aos="fade-up">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3">Impact</p>
-                <h2 class="text-4xl md:text-5xl font-extrabold">Outcomes, not deliverables.</h2>
-                <p class="text-gray-300 text-lg mt-3 max-w-lg">Anonymized results from real enterprise engagements.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-5">
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up">
-                    <div class="text-5xl font-extrabold gradient-text mb-2">93%</div>
-                    <h4 class="text-sm font-bold text-gold-light uppercase tracking-wide mb-3">Faster Forecast Cycles</h4>
-                    <p class="text-gray-300 text-sm">Automated a multi-database forecasting system — from 4 hours of manual Excel to 15 minutes of automated pipeline.</p>
+        <section id="legal">
+            <h2 style="text-align: center;">Legal</h2>
+            <div class="content-image" role="img" aria-label="Legal and compliance" style="margin-bottom: 3rem;"></div>
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h3>Privacy Policy</h3>
+                    <p>We are committed to protecting your privacy and ensuring the security of your personal information.</p>
                 </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl font-extrabold gradient-text mb-2">35%</div>
-                    <h4 class="text-sm font-bold text-gold-light uppercase tracking-wide mb-3">Infrastructure Cost Cut</h4>
-                    <p class="text-gray-300 text-sm">Migrated 30+ legacy Informatica workloads to Snowflake + AWS, eliminating on-prem licensing entirely.</p>
+                <div class="legal-section">
+                    <h3>Terms of Service</h3>
+                    <p>By using our services, you agree to comply with our terms and conditions.</p>
                 </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-5xl font-extrabold gradient-text mb-2">50+</div>
-                    <h4 class="text-sm font-bold text-gold-light uppercase tracking-wide mb-3">Assets Migrated, Zero Downtime</h4>
-                    <p class="text-gray-300 text-sm">Enterprise-scale platform migration with full governance — RBAC, masking, encryption, audit controls.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 card-glow transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl font-extrabold gradient-text mb-2">2M+</div>
-                    <h4 class="text-sm font-bold text-gold-light uppercase tracking-wide mb-3">Records, Zero Data Loss</h4>
-                    <p class="text-gray-300 text-sm">High-volume government migration with reusable ETL frameworks that cut cycle time by 40%.</p>
+                <div class="legal-section">
+                    <h3>Cookie Policy</h3>
+                    <p>We use cookies to enhance your browsing experience and analyze website traffic.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TESTIMONIAL -->
-    <section class="py-24 px-6 border-t border-gold/10">
-        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <svg class="w-10 h-10 mx-auto mb-6 text-gold/60" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm9 0A5.17 5.17 0 0011 11.17V18h6.83v-6.83H14.5a1.67 1.67 0 011.67-1.67V6z"/></svg>
-            <blockquote class="text-2xl md:text-3xl font-semibold leading-snug">
-                "KLN ONE took us from a proof-of-concept to a governed, production AI platform in one quarter. The knowledge transfer meant our team owned it on day one."
-            </blockquote>
-            <div class="mt-6">
-                <p class="font-bold text-gold-light">VP of Data & Analytics</p>
-                <p class="text-sm text-gray-400">Fortune 500 Energy Enterprise</p>
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p class="section-intro">Ready to move your AI initiatives from idea to production? Talk to our engineers today, or send us a note to get started.</p>
+            <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <a href="mailto:hello@klnone.com" style="color: inherit; text-decoration: none;">hello@klnone.com</a>
             </div>
-        </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section id="industries" class="py-24 px-6 border-t border-gold/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16" data-aos="fade-up">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3">Industries We Serve</p>
-                <h2 class="text-4xl md:text-5xl font-extrabold">Tailored AI for diverse business needs.</h2>
+            <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <a href="tel:+10000000000" style="color: inherit; text-decoration: none;">+1 (000) 000-0000</a>
             </div>
-            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="glass rounded-2xl p-6 text-center card-glow transition-all" data-aos="fade-up">
-                    <div class="w-11 h-11 mx-auto rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0V6.75a3 3 0 0 1 3-3h7.5a3 3 0 0 1 3 3v12a1.5 1.5 0 0 1-3 0M12 7.5v6m3-3h-6"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Healthcare</h4>
-                    <p class="text-xs text-gray-400">Clinical, genomic, regulatory AI</p>
-                </div>
-                <div class="glass rounded-2xl p-6 text-center card-glow transition-all" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-11 h-11 mx-auto rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 10.5h15M12 3l8.25 4.5H3.75L12 3ZM6 10.5V18m4-7.5V18m4-7.5V18m4-7.5V18"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Financial Services</h4>
-                    <p class="text-xs text-gray-400">Risk, compliance, fraud detection</p>
-                </div>
-                <div class="glass rounded-2xl p-6 text-center card-glow transition-all" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-11 h-11 mx-auto rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Retail & E-commerce</h4>
-                    <p class="text-xs text-gray-400">Personalization, demand forecasting</p>
-                </div>
-                <div class="glass rounded-2xl p-6 text-center card-glow transition-all" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-11 h-11 mx-auto rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 21V10.5l6-3.75V10.5l6-3.75V21M9 12.75h.008v.008H9v-.008Zm0 3h.008v.008H9v-.008Zm3-3h.008v.008H12v-.008Zm0 3h.008v.008H12v-.008Z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Manufacturing</h4>
-                    <p class="text-xs text-gray-400">Predictive maintenance, quality</p>
-                </div>
-                <div class="glass rounded-2xl p-6 text-center card-glow transition-all" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-11 h-11 mx-auto rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                        <svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Technology</h4>
-                    <p class="text-xs text-gray-400">Platform modernization, AI products</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT / WHY CHOOSE -->
-    <section id="about" class="py-24 px-6 border-t border-gold/10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3">Why Choose KLN ONE</p>
-                <h2 class="text-4xl font-extrabold mb-6">A trusted technology consulting partner.</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">KLN ONE is a specialized AI engineering practice helping enterprises harness the power of AI — from strategy through production. 15+ years of delivery across Fortune 500 companies, utilities, financial institutions, and government.</p>
-                <p class="text-gray-300 leading-relaxed mb-8">We embed with your team, ship working systems, transfer knowledge, and ensure long-term success. No fluff. No slide decks that go nowhere. Just outcomes.</p>
-
-                <!-- Why-choose pillars -->
-                <div class="grid grid-cols-2 gap-5 mb-8">
-                    <div>
-                        <h4 class="font-bold text-gold-light">Deep Expertise</h4>
-                        <p class="text-sm text-gray-400">Enterprise AI & cloud engineering</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gold-light">Proven Impact</h4>
-                        <p class="text-sm text-gray-400">Real-world business transformation</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gold-light">Security First</h4>
-                        <p class="text-sm text-gray-400">Built for trust and resilience</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gold-light">Future Ready</h4>
-                        <p class="text-sm text-gray-400">Scalable, innovative, sustainable</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2">
-                    <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-coal text-gold-light border border-gold/25">SnowPro</span>
-                    <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-coal text-gold-light border border-gold/25">AWS Certified</span>
-                    <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-coal text-gold-light border border-gold/25">Azure DE</span>
-                    <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-coal text-gold-light border border-gold/25">GenAI</span>
-                </div>
-            </div>
-            <div class="relative" data-aos="fade-left">
-                <div class="absolute inset-0 bg-gradient-to-br from-gold/20 via-gold/5 to-transparent rounded-3xl blur-3xl"></div>
-                <div class="relative glass rounded-3xl p-10 text-center">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.63 2.65m5.96 11.72a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Our Promise</h3>
-                    <p class="text-gray-300">We make ourselves unnecessary. Every engagement ends with your team fully enabled to own and extend what we built.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA BANNER (dark, on-brand — gold button, not an inverted gold band) -->
-    <section class="px-6" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto rounded-3xl border border-gold/25 bg-gradient-to-r from-gold/[0.08] to-gold/[0.02] px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-                <h3 class="text-2xl md:text-3xl font-extrabold">Ready to transform your business with AI?</h3>
-                <p class="text-gray-300 mt-1">Let's build intelligent solutions for a smarter tomorrow.</p>
-            </div>
-            <a href="#contact" class="shrink-0 px-8 py-4 bg-gold text-ink font-bold rounded-full hover:bg-gold-glow transition btn-glow">Get in Touch →</a>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 px-6 border-t border-gold/10">
-        <div class="max-w-2xl mx-auto text-center">
-            <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-3" data-aos="fade-up">Contact</p>
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4" data-aos="fade-up">Let's solve together.</h2>
-            <p class="text-gray-300 text-lg mb-10" data-aos="fade-up">Tell us your challenge. We respond within one business day.</p>
-            <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="text-left space-y-4" data-aos="fade-up" data-aos-delay="100">
-                <input type="hidden" name="form-name" value="contact">
-                <div class="hidden"><input name="bot-field" tabindex="-1"></div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Name" required class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
-                    <input type="email" name="email" placeholder="Email" required class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
-                </div>
-                <input type="text" name="company" placeholder="Company (optional)" class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
-                <textarea name="message" rows="4" placeholder="What's your AI or data challenge?" required class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition resize-none"></textarea>
-                <button type="submit" class="w-full py-4 bg-gold text-ink font-bold text-lg rounded-xl hover:bg-gold-glow transition btn-glow disabled:opacity-60 disabled:cursor-not-allowed">Send message →</button>
-                <p id="formStatus" role="status" aria-live="polite" class="text-sm text-center text-gray-400 min-h-[1.25rem]"></p>
+            
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
             </form>
-
-            <!-- GATED DOWNLOAD: capture name/email, then serve the Capabilities Overview PDF -->
-            <div class="glass rounded-2xl p-8 mt-12 text-center" data-aos="fade-up">
-                <p class="text-gold-light text-sm font-semibold tracking-widest uppercase mb-2">Free Resource</p>
-                <h3 class="text-2xl font-extrabold mb-2">Get our Capabilities Overview</h3>
-                <p class="text-gray-300 mb-6">A concise PDF on how we take enterprise AI from idea to production. Enter your details and we'll start the download.</p>
-                <form id="downloadForm" name="capabilities-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="text-left space-y-4">
-                    <input type="hidden" name="form-name" value="capabilities-download">
-                    <div class="hidden"><input name="bot-field" tabindex="-1"></div>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" name="name" placeholder="Name" required class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
-                        <input type="email" name="email" placeholder="Work email" required class="w-full px-5 py-4 bg-coal border border-gold/20 rounded-xl text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
-                    </div>
-                    <button type="submit" class="w-full py-4 bg-gold text-ink font-bold text-lg rounded-xl hover:bg-gold-glow transition btn-glow disabled:opacity-60 disabled:cursor-not-allowed">Download the overview (PDF) ↓</button>
-                    <p id="downloadStatus" role="status" aria-live="polite" class="text-sm text-center text-gray-400 min-h-[1.25rem]"></p>
-                </form>
-            </div>
-
-            <!-- DIRECT CONTACT DETAILS (placeholders — replace with real info) -->
-            <div class="grid sm:grid-cols-3 gap-5 mt-12 text-left" data-aos="fade-up">
-                <div class="flex items-start gap-3">
-                    <span class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-                    </span>
-                    <div>
-                        <h4 class="text-xs font-semibold text-gold-light uppercase tracking-wide mb-1">Location</h4>
-                        <p class="text-sm text-gray-300">San Francisco, CA · United States</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-                    </span>
-                    <div>
-                        <h4 class="text-xs font-semibold text-gold-light uppercase tracking-wide mb-1">Email</h4>
-                        <a href="mailto:hello@klnone.com" class="text-sm text-gray-300 hover:text-gold-light transition break-all">hello@klnone.com</a>
-                    </div>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gold-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-                    </span>
-                    <div>
-                        <h4 class="text-xs font-semibold text-gold-light uppercase tracking-wide mb-1">Phone</h4>
-                        <a href="tel:+10000000000" class="text-sm text-gray-300 hover:text-gold-light transition">+1 (000) 000-0000</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+            <div id="formMessage" class="form-message"></div>
+        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-gold/10 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-center md:text-left">
-                <span class="inline-flex flex-col leading-none select-none" aria-label="KLN ONE — Enterprise AI Engineering & Consulting">
-                    <span class="text-2xl font-extrabold tracking-tight">
-                        <span class="text-white">KLN</span><span class="gradient-text"> ONE</span>
-                    </span>
-                    <span class="mt-1 h-px w-full bg-gradient-to-r from-gold-glow via-gold to-gold-deep"></span>
-                    <span class="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-gold-light/80">Enterprise AI Engineering &amp; Consulting</span>
-                </span>
+    <footer>
+        <div class="footer-nav">
+            <div class="footer-section">
+                <h4>Capabilities</h4>
+                <ul>
+                    <li><a href="data-engineering.html">Data Engineering</a></li>
+                    <li><a href="data-analysis.html">Data Analysis</a></li>
+                    <li><a href="data-science.html">Data Science</a></li>
+                    <li><a href="data-consultancy.html">Data Consultancy</a></li>
+                </ul>
             </div>
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-                <a href="#services" class="hover:text-gold-light transition">Services</a>
-                <a href="#approach" class="hover:text-gold-light transition">Approach</a>
-                <a href="#impact" class="hover:text-gold-light transition">Impact</a>
-                <a href="#industries" class="hover:text-gold-light transition">Industries</a>
-                <a href="#about" class="hover:text-gold-light transition">About</a>
-                <a href="#contact" class="hover:text-gold-light transition">Contact</a>
+            <div class="footer-section">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="life-sciences.html">Life Sciences</a></li>
+                    <li><a href="financial-services.html">Financial Services</a></li>
+                    <li><a href="tech-telecom-media.html">Tech, Telecom, Media</a></li>
+                    <li><a href="manufacturing-logistics.html">Mfg & Logistics</a></li>
+                    <li><a href="retail-cpg.html">Retail & CPG</a></li>
+                </ul>
             </div>
-            <div class="text-center md:text-right">
-                <p class="text-sm text-gray-400">San Francisco, CA · <a href="mailto:hello@klnone.com" class="hover:text-gold-light transition">hello@klnone.com</a></p>
-                <p class="text-xs text-gray-500 mt-1">© <span id="year">2025</span> KLN ONE</p>
+            <div class="footer-section">
+                <h4><a href="#resources">Blog</a></h4>
+                <ul>
+                    <li><a href="latest-insights.html">Latest Insights</a></li>
+                    <li><a href="technical-articles.html">Technical Articles</a></li>
+                    <li><a href="industry-trends.html">Industry Trends</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="case-studies.html">Case Studies</a></h4>
+                <ul>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="client-results.html">Client Results</a></li>
+                    <li><a href="project-highlights.html">Project Highlights</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#working-with-us">About Us</a></h4>
+                <ul>
+                    <li><a href="our-mission.html">Our Mission</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="open-positions.html">Open Positions</a></li>
+                    <li><a href="company-culture.html">Company Culture</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#working-with-us">Partners</a></h4>
+                <ul>
+                    <li><a href="aws-partnership.html">AWS Partnership</a></li>
+                    <li><a href="snowflake-alliance.html">Snowflake Alliance</a></li>
+                    <li><a href="microsoft-certified.html">Microsoft Certified</a></li>
+                    <li><a href="technology-stack.html">Technology Stack</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><a href="#legal">Legal</a></h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="compliance.html">Compliance</a></li>
+                </ul>
             </div>
         </div>
+        <p>&copy; 2026 KLN ONE. All rights reserved.</p>
     </footer>
-
-    <!-- SCRIPTS -->
-    <script>
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Vanta.js animated 3D network background — skip if reduced motion, small screens, or libs failed to load
-    let vantaEffect = null;
-    function initVanta() {
-        if (prefersReducedMotion || window.innerWidth < 768) return;
-        if (typeof VANTA === 'undefined' || typeof THREE === 'undefined') return;
-        try {
-            vantaEffect = VANTA.NET({
-                el: "#heroVanta",
-                mouseControls: true,
-                touchControls: true,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: 0x4a4437,
-                backgroundColor: 0x0a0a0a,
-                points: 7.00,
-                maxDistance: 12.00,
-                spacing: 26.00,
-                showDots: false
-            });
-            // Soften the network so it stays a subtle backdrop, not clutter
-            const c = document.querySelector('#heroVanta canvas');
-            if (c) c.style.opacity = '0.35';
-        } catch (e) {
-            // Fallback: hero simply keeps its solid dark background
-        }
-    }
-    initVanta();
-
-    // Pause the animation when the tab is hidden to save CPU/battery
-    document.addEventListener('visibilitychange', () => {
-        if (!vantaEffect) return;
-        document.hidden ? vantaEffect.setOptions({ points: 0 }) : vantaEffect.setOptions({ points: 7 });
-    });
-
-    // AOS init
-    if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true, offset: 80, disable: prefersReducedMotion });
-    }
-
-    // Nav scroll
-    const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', scrollY > 60);
-    }, { passive: true });
-
-    // Mobile menu (with aria-expanded state)
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    function setMenu(open) {
-        mobileMenu.classList.toggle('hidden', !open);
-        mobileMenu.classList.toggle('flex', open);
-        mobileBtn.setAttribute('aria-expanded', String(open));
-        mobileBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-        document.body.style.overflow = open ? 'hidden' : ''; // lock scroll behind the overlay
-    }
-    mobileBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
-    document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => setMenu(false)));
-    // Close on Escape
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (!target) return;
-            e.preventDefault();
-            target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-        });
-    });
-
-    // Active-section highlighting in the nav.
-    // Track every intersecting section and light the topmost one, so the highlight
-    // never gets stuck on a stale link at the top/bottom of the page.
-    const navLinks = document.querySelectorAll('#mainNav a[href^="#"]');
-    const sections = [...navLinks].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-    if ('IntersectionObserver' in window && sections.length) {
-        const visible = new Set();
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target);
-            });
-            // Pick the section closest to the top of the viewport among those in view
-            const current = [...visible].sort((a, b) =>
-                a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0];
-            navLinks.forEach(l =>
-                l.classList.toggle('active', !!current && l.getAttribute('href') === '#' + current.id));
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        sections.forEach(s => observer.observe(s));
-    }
-
-    // Animated count-up for stat numbers (runs once when scrolled into view)
-    const stats = document.querySelectorAll('.stat');
-    function animateStat(el) {
-        const target = parseFloat(el.dataset.target);
-        const suffix = el.dataset.suffix || '';
-        if (prefersReducedMotion) { el.textContent = target + suffix; return; }
-        const duration = 1400;
-        const start = performance.now();
-        function tick(now) {
-            const p = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-            el.textContent = Math.round(target * eased) + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-    }
-    if ('IntersectionObserver' in window && stats.length) {
-        const statObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { animateStat(entry.target); obs.unobserve(entry.target); }
-            });
-        }, { threshold: 0.5 });
-        stats.forEach(s => statObserver.observe(s));
-    } else {
-        stats.forEach(s => s.textContent = s.dataset.target + (s.dataset.suffix || ''));
-    }
-
-    // Auto-update footer year
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // Contact form — submit to Netlify via fetch so the user stays on the page and gets real feedback
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    form?.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const btn = this.querySelector('button[type="submit"]');
-        const original = btn.textContent;
-
-        // Basic client-side validation before hitting the network
-        const email = this.email.value.trim();
-        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (!this.name.value.trim() || !emailOk || !this.message.value.trim()) {
-            status.textContent = emailOk ? 'Please fill in your name and message.' : 'Please enter a valid email address.';
-            status.className = 'text-sm text-center text-red-400 min-h-[1.25rem]';
-            return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        status.textContent = '';
-        status.className = 'text-sm text-center text-gray-400 min-h-[1.25rem]';
-        try {
-            const body = new URLSearchParams(new FormData(this)).toString();
-            const res = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body
-            });
-            if (!res.ok) throw new Error('Request failed');
-            this.reset();
-            btn.textContent = 'Sent ✓';
-            status.textContent = 'Thanks — we\u2019ll respond within one business day.';
-            status.className = 'text-sm text-center text-gold-light min-h-[1.25rem]';
-        } catch (err) {
-            btn.disabled = false;
-            btn.textContent = original;
-            status.textContent = 'Something went wrong. Please email us directly or try again.';
-            status.className = 'text-sm text-center text-red-400 min-h-[1.25rem]';
-        }
-    });
-
-    // Gated download — capture the lead via Netlify, then trigger the PDF download
-    const downloadForm = document.getElementById('downloadForm');
-    const downloadStatus = document.getElementById('downloadStatus');
-    const CAPABILITIES_PDF = 'KLN-ONE-Capabilities-Overview.pdf';
-    function triggerDownload(url) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = url.split('/').pop();
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-    }
-    downloadForm?.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const btn = this.querySelector('button[type="submit"]');
-        const original = btn.textContent;
-
-        const email = this.email.value.trim();
-        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (!this.name.value.trim() || !emailOk) {
-            downloadStatus.textContent = emailOk ? 'Please enter your name.' : 'Please enter a valid email address.';
-            downloadStatus.className = 'text-sm text-center text-red-400 min-h-[1.25rem]';
-            return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = 'Preparing…';
-        downloadStatus.textContent = '';
-        downloadStatus.className = 'text-sm text-center text-gray-400 min-h-[1.25rem]';
-
-        // Record the lead, but don't block the download if the network call fails
-        try {
-            const body = new URLSearchParams(new FormData(this)).toString();
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body
-            });
-        } catch (err) {
-            // non-fatal: still let the user get the file
-        }
-
-        triggerDownload(CAPABILITIES_PDF);
-        this.reset();
-        btn.disabled = false;
-        btn.textContent = original;
-        downloadStatus.textContent = 'Thanks — your download should start automatically.';
-        downloadStatus.className = 'text-sm text-center text-gold-light min-h-[1.25rem]';
-    });
-    </script>
 </body>
 </html>
