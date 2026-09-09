@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLN Data Strategy - Clarity from Data</title>
+    <title>KLN ONE - Enterprise AI Engineering & Consulting</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,40 +118,8 @@
         }
         
         function updateDynamicImages() {
-            // Update main section images
-            document.querySelector('[alt="Data Capabilities"]').src = getRandomImage(imageCollections.capabilities);
-            document.querySelector('[alt="Data Resources"]').src = getRandomImage(imageCollections.resources);
-            document.querySelector('[alt="Professional Team"]').src = getRandomImage(imageCollections.team);
-            document.querySelector('[alt="Legal Compliance"]').src = getRandomImage(imageCollections.legal);
-            
-            // Update capability cards
-            document.querySelector('[alt="Data Engineering"]').src = getRandomImage(imageCollections.dataEngineering);
-            document.querySelector('[alt="Data Science & AI"]').src = getRandomImage(imageCollections.dataScience);
-            document.querySelector('[alt="Data Analysis"]').src = getRandomImage(imageCollections.dataAnalysis);
-            document.querySelector('[alt="Data Strategy Consultancy"]').src = getRandomImage(imageCollections.strategy);
-            document.querySelector('[alt="Data Governance & Security"]').src = getRandomImage(imageCollections.governance);
-            
-            // Update case study images
-            document.querySelector('[alt="Life Sciences"]').src = getRandomImage(imageCollections.lifeSciences);
-            document.querySelector('[alt="Tech, Telecom, & Media"]').src = getRandomImage(imageCollections.tech);
-            document.querySelector('[alt="CPG & Retail"]').src = getRandomImage(imageCollections.retail);
-            document.querySelector('[alt="Financial Services"]').src = getRandomImage(imageCollections.financial);
-            document.querySelector('[alt="Manufacturing & Logistics"]').src = getRandomImage(imageCollections.manufacturing);
-            
-            // Update blog category images
-            const blogImages = document.querySelectorAll('.blog-image');
-            blogImages[0].src = getRandomImage(imageCollections.dataEngineering);
-            blogImages[1].src = getRandomImage(imageCollections.dataAnalysis);
-            blogImages[2].src = getRandomImage(imageCollections.dataScience);
-            blogImages[3].src = getRandomImage(imageCollections.dataScience);
-            blogImages[4].src = getRandomImage(imageCollections.lifeSciences);
-            blogImages[5].src = getRandomImage(imageCollections.tech);
-            
-            // Update video thumbnails
-            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
-            videoThumbnails[0].style.backgroundImage = `url('${getRandomImage(imageCollections.dataEngineering)}')`;
-            videoThumbnails[1].style.backgroundImage = `url('${getRandomImage(imageCollections.dataScience)}')`;
-            videoThumbnails[2].style.backgroundImage = `url('${getRandomImage(imageCollections.lifeSciences)}')`;
+            // Visuals are now self-hosted CSS/SVG gradient panels (no external stock photos).
+            // Kept as a no-op so existing DOMContentLoaded wiring stays intact.
         }
         
         // Update images when page loads
@@ -410,7 +378,13 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto; display: block;">
+                <a href="#hero" aria-label="KLN ONE - home" style="text-decoration: none; display: inline-flex; flex-direction: column; line-height: 1;">
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; letter-spacing: -0.5px;">
+                        <span style="color: #00796B;">KLN</span><span style="color: #004D40;"> ONE</span>
+                    </span>
+                    <span style="display:block; height: 3px; width: 100%; margin-top: 4px; background: linear-gradient(135deg, #00796B, #004D40); border-radius: 2px;"></span>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #00796B; margin-top: 4px;">Enterprise AI Engineering &amp; Consulting</span>
+                </a>
             </div>
             <ul>
                 <li><a href="#hero">Home</a></li>
@@ -425,9 +399,9 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>The Data Consulting Company</h1>
-                <p class="hero-subtitle">Clarity from Data.</p>
-                <p>Transforming complex data landscapes into strategic business advantages through innovative analytics, intelligent automation, and evidence-driven decision frameworks that accelerate growth and competitive positioning.</p>
+                <h1>Enterprise AI Engineering &amp; Consulting</h1>
+                <p class="hero-subtitle">From AI ideas to production.</p>
+                <p>We help enterprises design, build, and deploy secure, scalable, and intelligent AI solutions — combining deep engineering expertise with modern cloud and data platforms to turn AI ideas into production systems that drive real business value.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-button primary">Get Started</a>
                     
@@ -437,11 +411,13 @@
 
         <section id="capabilities">
             <h2>Our Capabilities</h2>
-            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Data Capabilities" class="content-image" style="margin-bottom: 2rem;">
-            <p class="section-intro">Transforming enterprise data challenges into competitive advantages through advanced methodologies, cutting-edge technologies, and proven frameworks that drive measurable business outcomes.</p>
+            <div class="content-image" role="img" aria-label="AI engineering capabilities" style="margin-bottom: 2rem;"></div>
+            <p class="section-intro">Turning enterprise AI ambitions into production reality — from strategy and data foundations to secure, scalable models and MLOps — through advanced engineering, modern cloud platforms, and proven delivery frameworks that drive measurable business outcomes.</p>
             <div class="capabilities-grid">
                 <div class="capability-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop" alt="Data Engineering" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="card-media" role="img" aria-label="Data Engineering">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+                    </div>
                     <h3>Data Engineering</h3>
                     <p>Enterprise-grade data infrastructure using cloud-native architectures, distributed processing frameworks, and DataOps methodologies. We implement fault-tolerant pipelines with Apache Spark, Kafka, and Kubernetes that handle petabyte-scale datasets with microsecond latency requirements.</p>
                     <ul class="capability-list">
@@ -452,7 +428,9 @@
                     </ul>
                 </div>
                 <div class="capability-card">
-                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop" alt="Data Science & AI" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="card-media" role="img" aria-label="Data Science & AI">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="1.6"/><circle cx="19" cy="6" r="1.6"/><circle cx="5" cy="18" r="1.6"/><circle cx="19" cy="18" r="1.6"/><path d="M9.6 10.6 6.2 7.2M14.4 10.6l3.4-3.4M9.6 13.4l-3.4 3.4M14.4 13.4l3.4 3.4"/></svg>
+                    </div>
                     <h3>Data Science & AI</h3>
                     <p>Advanced machine learning and AI solutions using transformer architectures, ensemble methods, and deep neural networks. We implement production-grade ML systems with automated retraining, bias detection, and explainable AI for regulatory compliance and business transparency.</p>
                     <ul class="capability-list">
@@ -463,7 +441,9 @@
                     </ul>
                 </div>
                 <div class="capability-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop" alt="Data Analysis" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="card-media" role="img" aria-label="Data Analysis">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="10" rx="1"/><rect x="17" y="13" width="3" height="4" rx="1"/></svg>
+                    </div>
                     <h3>Data Analysis</h3>
                     <p>Sophisticated analytical frameworks combining statistical rigor with interactive visualization and self-service capabilities. We implement advanced techniques including causal inference, Bayesian statistics, and multivariate analysis to deliver actionable insights that drive strategic decision-making.</p>
                     <ul class="capability-list">
@@ -474,18 +454,22 @@
                     </ul>
                 </div>
                 <div class="capability-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=150&fit=crop" alt="Data Strategy Consultancy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3>Data Strategy Consultancy</h3>
-                    <p>Comprehensive transformation guidance combining strategic planning, organizational change management, and technology roadmapping. We develop data maturity assessments, governance frameworks, and ROI-driven implementation plans that align data initiatives with business objectives.</p>
+                    <div class="card-media" role="img" aria-label="AI Strategy & Consulting">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.37.85.9.98 1.5l.22 1.2h4.8l.22-1.2c.13-.6.48-1.13.98-1.5A6 6 0 0 0 12 3Z"/><path d="M9.5 20h5M10 22h4"/></svg>
+                    </div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Comprehensive transformation guidance combining AI roadmapping, use-case discovery, and ROI modeling. We develop AI and data maturity assessments, governance frameworks, and pragmatic implementation plans that align AI initiatives with clear business objectives.</p>
                     <ul class="capability-list">
-                        <li>Enterprise Data Strategy & Maturity Assessment</li>
+                        <li>AI Roadmaps, Use-Case Discovery & ROI Modeling</li>
                         <li>Digital Transformation & Change Management</li>
-                        <li>Data Governance & Compliance Frameworks (GDPR, HIPAA)</li>
+                        <li>AI & Data Governance Frameworks (GDPR, HIPAA)</li>
                         <li>Cloud Migration & Architecture Modernization</li>
                     </ul>
                 </div>
                 <div class="capability-card">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=150&fit=crop" alt="Data Governance & Security" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="card-media" role="img" aria-label="Data Governance & Security">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 9 4-1 7-4.5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg>
+                    </div>
                     <h3>Data Governance & Security</h3>
                     <p>Enterprise governance frameworks ensuring data quality, privacy, and regulatory compliance through automated monitoring, lineage tracking, and risk management. We implement zero-trust architectures with encryption, access controls, and comprehensive audit capabilities.</p>
                     <ul class="capability-list">
@@ -498,9 +482,9 @@
             </div>
         </section>
 
-        <section id="resources" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Resources</h2>
-            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Data Resources" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <section id="resources" style="background: var(--surface);">
+            <h2 style="text-align: center;">Resources</h2>
+            <div class="content-image" role="img" aria-label="Resources" style="margin-bottom: 3rem;"></div>
             <p class="section-intro" style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 3rem; color: #495057; line-height: 1.7;">Access our comprehensive library of case studies, videos, and insights across industries and technologies.</p>
             
             <div class="resources-container">
@@ -508,31 +492,41 @@
                     <h3>Case Studies</h3>
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop" alt="Life Sciences" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="card-media" role="img" aria-label="Life Sciences">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3h6M10 3v4.5L6 15a3 3 0 0 0 2.7 4.3h6.6A3 3 0 0 0 18 15l-4-7.5V3"/><path d="M8 13h8"/></svg>
+                            </div>
                             <h4>Life Sciences</h4>
                             <p>Genomic data pipeline processing 50TB+ datasets with Apache Spark, reducing clinical trial patient stratification time by 73% using ML-based biomarker discovery and FDA 21 CFR Part 11 compliant data lineage tracking</p>
                             <a href="life-sciences-cases.html" class="resource-link">View Case Studies →</a>
                         </div>
                         <div class="resource-item">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=150&fit=crop" alt="Tech, Telecom, & Media" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="card-media" role="img" aria-label="Tech, Telecom, & Media">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0M8 16a6 6 0 0 1 8 0"/><circle cx="12" cy="19" r="1.4"/><path d="M2 10a15 15 0 0 1 20 0"/></svg>
+                            </div>
                             <h4>Tech, Telecom, & Media</h4>
                             <p>Real-time network anomaly detection using LSTM neural networks and Kafka streaming, achieving 99.7% accuracy in predicting service degradation 15 minutes before occurrence, reducing customer churn by 34%</p>
                             <a href="telecom-cases.html" class="resource-link">View Case Studies →</a>
                         </div>
                         <div class="resource-item">
-                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=150&fit=crop" alt="CPG & Retail" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="card-media" role="img" aria-label="CPG & Retail">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h2l2 12h9l2-8H7"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+                            </div>
                             <h4>CPG & Retail</h4>
                             <p>Multi-armed bandit recommendation system with transformer-based embeddings, increasing conversion rates by 47% while implementing differential privacy for GDPR compliance across 12M+ customer profiles</p>
                             <a href="retail-cases.html" class="resource-link">View Case Studies →</a>
                         </div>
                         <div class="resource-item">
-                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=150&fit=crop" alt="Financial Services" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="card-media" role="img" aria-label="Financial Services">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M4 10h16M12 3 4 7h16l-8-4ZM6 10v7M10 10v7M14 10v7M18 10v7"/></svg>
+                            </div>
                             <h4>Financial Services</h4>
                             <p>Graph neural network fraud detection system processing 2M+ transactions/second with <50ms latency, achieving 0.02% false positive rate while maintaining Basel III compliance and explainable AI requirements</p>
                             <a href="financial-cases.html" class="resource-link">View Case Studies →</a>
                         </div>
                         <div class="resource-item">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=150&fit=crop" alt="Manufacturing & Logistics" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="card-media" role="img" aria-label="Manufacturing & Logistics">
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21V10l6 4V10l6 4V6l6 3v12H3Z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/></svg>
+                            </div>
                             <h4>Manufacturing & Logistics</h4>
                             <p>IoT-enabled predictive maintenance using ensemble methods and edge computing, reducing unplanned downtime by 68% and maintenance costs by $2.3M annually through vibration analysis and thermal imaging ML models</p>
                             <a href="manufacturing-cases.html" class="resource-link">View Case Studies →</a>
@@ -544,27 +538,27 @@
                     <h3>Videos</h3>
                     <div class="video-grid">
                         <div class="video-item">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
-                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
-                                    <div class="play-button">▶️</div>
+                            <a href="#contact" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
                                 </div>
                                 <h4>Data Engineering Best Practices</h4>
                                 <p>Learn how to build scalable data pipelines</p>
                             </a>
                         </div>
                         <div class="video-item">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
-                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
-                                    <div class="play-button">▶️</div>
+                            <a href="#contact" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
                                 </div>
                                 <h4>Generative AI in Enterprise</h4>
                                 <p>Implementing AI solutions for business transformation</p>
                             </a>
                         </div>
                         <div class="video-item">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
-                                <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop'); background-size: cover; background-position: center;">
-                                    <div class="play-button">▶️</div>
+                            <a href="#contact" class="video-link">
+                                <div class="video-thumbnail">
+                                    <div class="play-button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
                                 </div>
                                 <h4>Bioinformatics Solutions</h4>
                                 <p>Advanced analytics for life sciences research</p>
@@ -577,7 +571,7 @@
                     <h3>Blog Posts</h3>
                     <div class="blog-categories">
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=150&fit=crop" alt="Data Engineering" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Data Engineering"></div>
                             <h4>Data Engineering</h4>
                             <div class="blog-posts">
                                 <a href="building-modern-data-pipelines.html" class="blog-post-link">Building Modern Data Pipelines</a>
@@ -586,7 +580,7 @@
                             </div>
                         </div>
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=150&fit=crop" alt="Data Analysis" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Data Analysis"></div>
                             <h4>Data Analysis</h4>
                             <div class="blog-posts">
                                 <a href="advanced-bi-techniques.html" class="blog-post-link">Advanced BI Techniques</a>
@@ -595,7 +589,7 @@
                             </div>
                         </div>
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=150&fit=crop" alt="Data Science" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Data Science"></div>
                             <h4>Data Science</h4>
                             <div class="blog-posts">
                                 <a href="machine-learning-model-selection.html" class="blog-post-link">Machine Learning Model Selection</a>
@@ -604,7 +598,7 @@
                             </div>
                         </div>
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=300&h=150&fit=crop" alt="Generative AI" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Generative AI"></div>
                             <h4>Generative AI</h4>
                             <div class="blog-posts">
                                 <a href="enterprise-ai-implementation.html" class="blog-post-link">Enterprise AI Implementation</a>
@@ -613,7 +607,7 @@
                             </div>
                         </div>
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=150&fit=crop" alt="Bioinformatics" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Bioinformatics"></div>
                             <h4>Bioinformatics</h4>
                             <div class="blog-posts">
                                 <a href="genomic-data-analysis.html" class="blog-post-link">Genomic Data Analysis</a>
@@ -622,7 +616,7 @@
                             </div>
                         </div>
                         <div class="blog-category">
-                            <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=300&h=150&fit=crop" alt="Open Source" class="blog-image">
+                            <div class="blog-image" role="img" aria-label="Open Source"></div>
                             <h4>Open Source</h4>
                             <div class="blog-posts">
                                 <a href="open-source-data-tools.html" class="blog-post-link">Open Source Data Tools</a>
@@ -635,9 +629,9 @@
             </div>
         </section>
 
-        <section id="working-with-us" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Working with Us</h2>
-            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=300&fit=crop" alt="Professional Team" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <section id="working-with-us" style="background: var(--surface-2);">
+            <h2 style="text-align: center;">Working with Us</h2>
+            <div class="content-image" role="img" aria-label="Working with the KLN ONE team" style="margin-bottom: 3rem;"></div>
             <div class="about-container">
                 <div class="working-grid">
                     <div class="working-section">
@@ -688,15 +682,12 @@
                         <h3>Partners</h3>
                         <div class="partners-compact">
                             <a href="aws-partnership.html" class="partner-item">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="partner-logo">
                                 <span>AWS Advanced Partner</span>
                             </a>
                             <a href="snowflake-alliance.html" class="partner-item">
-                                <img src="https://logos-world.net/wp-content/uploads/2022/11/Snowflake-Symbol.png" alt="Snowflake" class="partner-logo">
                                 <span>Snowflake Elite Partner</span>
                             </a>
                             <a href="microsoft-certified.html" class="partner-item">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="partner-logo">
                                 <span>Microsoft Gold Certified</span>
                             </a>
                         </div>
@@ -716,9 +707,9 @@
             </div>
         </section>
 
-        <section id="legal" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 80px 0;">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50;">Legal</h2>
-            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=300&fit=crop" alt="Legal Compliance" class="content-image" style="margin-bottom: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <section id="legal">
+            <h2 style="text-align: center;">Legal</h2>
+            <div class="content-image" role="img" aria-label="Legal and compliance" style="margin-bottom: 3rem;"></div>
             <div class="legal-content">
                 <div class="legal-section">
                     <h3>Privacy Policy</h3>
@@ -737,18 +728,14 @@
 
         <section id="contact">
             <h2>Let's Connect</h2>
-            <p>Ready to make smarter decisions with your data? Talk to our data experts today or fill out this form to get started
+            <p class="section-intro">Ready to move your AI initiatives from idea to production? Talk to our engineers today, or send us a note to get started.</p>
             <div class="contact-item">
-                <span class="contact-icon">✉️</span>
-                <span>info@klndatastrategy.com</span>
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <a href="mailto:hello@klnone.com" style="color: inherit; text-decoration: none;">hello@klnone.com</a>
             </div>
             <div class="contact-item">
-                <span class="contact-icon">📞</span>
-                <span>+1 (555) 123-4567</span>
-            </div>
-            <div class="contact-item">
-                
-                
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <a href="tel:+10000000000" style="color: inherit; text-decoration: none;">+1 (000) 000-0000</a>
             </div>
             
             <form id="contactForm">
@@ -828,7 +815,7 @@
                 </ul>
             </div>
         </div>
-        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+        <p>&copy; 2026 KLN ONE. All rights reserved.</p>
     </footer>
 </body>
 </html>

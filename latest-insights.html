@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Insights - KLN Data Strategy</title>
+    <title>Latest Insights - KLN ONE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
                             <ul>${getRandomItems(footerContent.caseStudies, 3).map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}</ul>
                         </div>
                     </div>
-                    <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+                    <p>&copy; 2026 KLN ONE. All rights reserved.</p>
                 `;
             }
         }
@@ -88,7 +88,13 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="03C37044-1B0A-4ED4-A760-718C62F2FA75.png" alt="KLN Data Strategy" class="logo-image" style="height: 120px; width: auto;">
+                <a href="index_new_fixed.html" aria-label="KLN ONE - home" style="text-decoration: none; display: inline-flex; flex-direction: column; line-height: 1;">
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; letter-spacing: -0.5px;">
+                        <span style="color: #00796B;">KLN</span><span style="color: #004D40;"> ONE</span>
+                    </span>
+                    <span style="display:block; height: 3px; width: 100%; margin-top: 4px; background: linear-gradient(135deg, #00796B, #004D40); border-radius: 2px;"></span>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #00796B; margin-top: 4px;">Enterprise AI Engineering &amp; Consulting</span>
+                </a>
             </div>
             <ul>
                 <li><a href="index_new_fixed.html">Home</a></li>
@@ -101,8 +107,8 @@
     </header>
 
     <main>
-        <section style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1920&h=600&fit=crop') center/cover; padding: 120px 0; color: white; text-align: center;">
-            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Latest Insights</h1>
+        <section style="background: linear-gradient(135deg, #0b3d38 0%, #00796B 55%, #004D40 100%); padding: 120px 0; color: white; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; color: #fff; -webkit-text-fill-color: #fff;">Latest Insights</h1>
             <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; color: #e0e0e0;">Stay ahead with our latest research, trends, and expert perspectives on data strategy and emerging technologies</p>
         </section>
 
@@ -110,17 +116,17 @@
             <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
                     <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=200&fit=crop" alt="AI Trends" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <div class="content-image" role="img" aria-label="AI Trends"></div>
                         <h3 style="color: #2c3e50; margin-bottom: 1rem;">The Future of Generative AI in Enterprise</h3>
                         <p style="color: #495057; line-height: 1.6;">Exploring how generative AI is transforming business operations and decision-making processes across industries with practical implementation strategies.</p>
                     </article>
                     <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=200&fit=crop" alt="Data Governance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <div class="content-image" role="img" aria-label="Data Governance"></div>
                         <h3 style="color: #2c3e50; margin-bottom: 1rem;">Data Governance in the Cloud Era</h3>
                         <p style="color: #495057; line-height: 1.6;">Best practices for maintaining data quality, security, and compliance in modern cloud-based architectures with automated governance frameworks.</p>
                     </article>
                     <article style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; padding: 2rem;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=200&fit=crop" alt="Real-time Analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <div class="content-image" role="img" aria-label="Real-time Analytics"></div>
                         <h3 style="color: #2c3e50; margin-bottom: 1rem;">Real-time Analytics: From Batch to Stream</h3>
                         <p style="color: #495057; line-height: 1.6;">How organizations are shifting from traditional batch processing to real-time streaming analytics for immediate business insights and competitive advantage.</p>
                     </article>
@@ -130,7 +136,7 @@
     </main>
 
     <footer style="background: #00796B; color: white; padding: 3rem 2rem 2rem; text-align: center;">
-        <p>&copy; 2026 KLN Data Strategy. All rights reserved.</p>
+        <p>&copy; 2026 KLN ONE. All rights reserved.</p>
     </footer>
 </body>
 </html>

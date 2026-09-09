@@ -1,61 +1,74 @@
-# KLN Data Strategy Brand Guidelines
+# KLN ONE Brand Guidelines
 
 ## Brand Identity
-**Company Name:** KLN Data Strategy  
-**Tagline:** "Transforming Data, Empowering Decisions"  
-**Industry:** Data Consulting & Analytics  
+**Company Name:** KLN ONE
+**Tagline:** "Enterprise AI Engineering & Consulting"
+**Positioning line:** "From AI Ideas to Production."
+**Industry:** Enterprise AI Engineering & Consulting
 
 ## Brand Personality
-- **Professional** - Trusted advisor for enterprise clients
-- **Innovative** - Cutting-edge technology and methodologies  
-- **Reliable** - Consistent delivery of measurable results
-- **Strategic** - Long-term partnership approach
-- **Expert** - Deep technical knowledge and industry experience
+- **Professional** - Trusted partner for enterprise clients
+- **Innovative** - Cutting-edge AI engineering and methodologies
+- **Reliable** - Secure, scalable, production-ready delivery
+- **Strategic** - End-to-end, outcome-driven partnership
+- **Expert** - Deep technical knowledge across AI, cloud, and data
 
 ## Logo Design
-The KLN logo features:
-- **Data Network Visualization** - Connected nodes representing data flow and insights
-- **Modern Typography** - Clean, professional Inter font family
-- **Scalable Design** - Works across digital and print media
+The KLN ONE logo is a typographic wordmark:
+- **Wordmark** - "KLN" in white + "ONE" in the gold gradient
+- **Underline accent** - A single clean gold gradient rule sits *below* the
+  wordmark. It must never cross through or overlap the letterforms.
+- **Tagline** - "ENTERPRISE AI ENGINEERING & CONSULTING" in small-caps gold,
+  set beneath the underline with generous letter-spacing so it stays legible.
+- **Typography** - Plus Jakarta Sans, ExtraBold (800) for the wordmark.
+
+### Logo Standard (SVG spec)
+- viewBox: `0 0 182 46` (leaves clear space so nothing clips)
+- Wordmark: `font-size: 24`, `font-weight: 800`
+- Underline accent: horizontal rule at `y=32`, `stroke-width: 2`, gold gradient
+- Tagline: `font-size: 7`, `font-weight: 600`, `letter-spacing: 2.4`, fill `#c9a24b`
+- Gold gradient stops: `#f0cd85` → `#d4a641` (55%) → `#b8862b`
 
 ## Color Palette
 
 ### Primary Colors
-- **Deep Blue** `#1e40af` - Trust, professionalism, stability
-- **Bright Blue** `#3b82f6` - Innovation, technology, clarity
-- **Amber** `#f59e0b` - Insights, value, transformation
+- **Ink (Background)** `#0a0a0a` - Primary dark canvas
+- **Coal (Surface)** `#141414` - Cards and raised surfaces
+- **Gold** `#d4a641` - Primary brand accent
 
-### Secondary Colors  
-- **Dark Gray** `#1f2937` - Primary text, authority
-- **Medium Gray** `#6b7280` - Secondary text, balance
-- **Light Gray** `#9ca3af` - Subtle text, sophistication
+### Gold Scale
+- **Gold Glow** `#f0cd85` - Highlights, gradient start
+- **Gold Light** `#e8c877` - Small/body text on dark (higher contrast, WCAG AA)
+- **Gold Default** `#d4a641` - Primary accent
+- **Gold Deep** `#b8862b` - Gradient end, shadows
 
-### Background Colors
-- **White** `#ffffff` - Clean, professional
-- **Light Surface** `#f8fafc` - Subtle contrast
-- **Border** `#e5e7eb` - Gentle separation
+### Text Colors
+- **White** `#ffffff` - Primary text on dark
+- **Gray 300** `#d1d5db` - Secondary nav/body text
+- **Gray 400** `#9ca3af` - Muted footer/caption text
 
 ## Typography
-- **Primary Font:** Inter (Google Fonts)
-- **Headings:** Inter Bold/ExtraBold (700-800 weight)
-- **Body Text:** Inter Regular/Medium (400-500 weight)
-- **Captions:** Inter Light (300 weight)
+- **Primary Font:** Plus Jakarta Sans (Google Fonts)
+- **Headings / Wordmark:** ExtraBold (800)
+- **Body Text:** Regular/Medium (400-500)
+- **Emphasis:** SemiBold/Bold (600-700)
 
 ## Logo Usage
-- Minimum size: 120px width for digital, 1 inch for print
-- Clear space: Equal to the height of the logo on all sides
-- Use on white or light backgrounds for optimal contrast
+- Minimum size: 150px width for digital
+- Clear space: Equal to the height of the wordmark on all sides
+- Use on the ink/dark background for optimal contrast
+- The underline accent must sit below the wordmark and never intersect the letters
 - Maintain original proportions - do not stretch or distort
 
 ## Brand Voice
 - **Tone:** Professional yet approachable
-- **Style:** Clear, concise, data-driven
-- **Messaging:** Focus on business outcomes and ROI
+- **Style:** Clear, concise, outcome-driven
+- **Messaging:** Focus on business value, security, and scale
 - **Language:** Technical accuracy with business clarity
 
 ## Applications
-- Website headers and navigation
-- Business cards and letterhead  
+- Website headers, navigation, and footer
+- Business cards and letterhead
 - Presentation templates
 - Social media profiles
 - Marketing materials
